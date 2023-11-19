@@ -14,7 +14,7 @@
         PopulateYourHomeScreenListView(yourTasksArray)
         PopulateRoomateHomeScreenListView(roommatesTasksArray)
         '''''''''''''''''''''''''''''''''''''''''''''' REMOVE THE CODE AFTER WE ARE DONE TESTING
-
+        UpdateTotalAmount()
     End Sub
 
     ' Task Definition
@@ -170,10 +170,24 @@
 
     'xxxxxxxxxxxxxxxxxxxxxxx______HOMEPAGE CODE ENDS______xxxxxxxxxxxxxxxxxxxxxxxxxx
 
+    'xxxxxxxxxxxxxxxxxxxxxxx______EXPENSE PAGE CODE______xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    Private Sub UpdateTotalAmount()
+        Dim totalAmount As Decimal = 0
+
+        For Each item As ListViewItem In yourExpenseList.Items
+            Dim costValue As Decimal
+
+            If Decimal.TryParse(item.SubItems(1).Text.TrimStart("$"c), costValue) Then
+                totalAmount += costValue
+            End If
+        Next
+
+        yourTotalAmount.Text = $"{totalAmount:C}"
+    End Sub
 
 
-
-
+    'xxxxxxxxxxxxxxxxxxxxxxx______EXPENSE PAGE CODE ENDS______xxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 End Class

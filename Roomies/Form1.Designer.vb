@@ -22,8 +22,15 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim ListViewItem1 As ListViewItem = New ListViewItem(New String() {"Party Cups", "$10.00"}, -1)
         TabControl1 = New TabControl()
         Expense = New TabPage()
+        yourTotalAmount = New Label()
+        yourTotalLabel = New Label()
+        yourExpenseList = New ListView()
+        yourExpenseItemColumn = New ColumnHeader()
+        yourExpenseCostColumn = New ColumnHeader()
+        yourExpenseLabel = New Label()
         Chore = New TabPage()
         Home = New TabPage()
         addTaskHomeScreenBtn = New Button()
@@ -44,6 +51,7 @@ Partial Class Form1
         Trade = New TabPage()
         Performance = New TabPage()
         TabControl1.SuspendLayout()
+        Expense.SuspendLayout()
         Home.SuspendLayout()
         SuspendLayout()
         ' 
@@ -56,28 +64,94 @@ Partial Class Form1
         TabControl1.Controls.Add(Trade)
         TabControl1.Controls.Add(Performance)
         TabControl1.ItemSize = New Size(90, 50)
-        TabControl1.Location = New Point(7, 12)
+        TabControl1.Location = New Point(12, 24)
+        TabControl1.Margin = New Padding(5, 6, 5, 6)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(455, 577)
+        TabControl1.Size = New Size(780, 1154)
         TabControl1.SizeMode = TabSizeMode.Fixed
         TabControl1.TabIndex = 0
         ' 
         ' Expense
         ' 
+        Expense.Controls.Add(yourTotalAmount)
+        Expense.Controls.Add(yourTotalLabel)
+        Expense.Controls.Add(yourExpenseList)
+        Expense.Controls.Add(yourExpenseLabel)
         Expense.Location = New Point(4, 4)
+        Expense.Margin = New Padding(5, 6, 5, 6)
         Expense.Name = "Expense"
-        Expense.Padding = New Padding(3)
-        Expense.Size = New Size(447, 519)
+        Expense.Padding = New Padding(5, 6, 5, 6)
+        Expense.Size = New Size(772, 1096)
         Expense.TabIndex = 0
         Expense.Text = "Expense"
         Expense.UseVisualStyleBackColor = True
         ' 
+        ' yourTotalAmount
+        ' 
+        yourTotalAmount.AutoSize = True
+        yourTotalAmount.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTotalAmount.Location = New Point(240, 746)
+        yourTotalAmount.Margin = New Padding(5, 0, 5, 0)
+        yourTotalAmount.Name = "yourTotalAmount"
+        yourTotalAmount.Size = New Size(123, 51)
+        yourTotalAmount.TabIndex = 7
+        yourTotalAmount.Text = "$0.00"
+        ' 
+        ' yourTotalLabel
+        ' 
+        yourTotalLabel.AutoSize = True
+        yourTotalLabel.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTotalLabel.Location = New Point(18, 746)
+        yourTotalLabel.Margin = New Padding(5, 0, 5, 0)
+        yourTotalLabel.Name = "yourTotalLabel"
+        yourTotalLabel.Size = New Size(222, 51)
+        yourTotalLabel.TabIndex = 6
+        yourTotalLabel.Text = "Your Total:"
+        ' 
+        ' yourExpenseList
+        ' 
+        yourExpenseList.Activation = ItemActivation.OneClick
+        yourExpenseList.Alignment = ListViewAlignment.Default
+        yourExpenseList.Columns.AddRange(New ColumnHeader() {yourExpenseItemColumn, yourExpenseCostColumn})
+        yourExpenseList.GridLines = True
+        yourExpenseList.Items.AddRange(New ListViewItem() {ListViewItem1})
+        yourExpenseList.LabelEdit = True
+        yourExpenseList.Location = New Point(18, 134)
+        yourExpenseList.Margin = New Padding(5, 6, 5, 6)
+        yourExpenseList.Name = "yourExpenseList"
+        yourExpenseList.Size = New Size(724, 586)
+        yourExpenseList.TabIndex = 5
+        yourExpenseList.UseCompatibleStateImageBehavior = False
+        yourExpenseList.View = View.Details
+        ' 
+        ' yourExpenseItemColumn
+        ' 
+        yourExpenseItemColumn.Text = "Item"
+        yourExpenseItemColumn.Width = 600
+        ' 
+        ' yourExpenseCostColumn
+        ' 
+        yourExpenseCostColumn.Text = "Cost"
+        yourExpenseCostColumn.Width = 120
+        ' 
+        ' yourExpenseLabel
+        ' 
+        yourExpenseLabel.AutoSize = True
+        yourExpenseLabel.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourExpenseLabel.Location = New Point(18, 58)
+        yourExpenseLabel.Margin = New Padding(5, 0, 5, 0)
+        yourExpenseLabel.Name = "yourExpenseLabel"
+        yourExpenseLabel.Size = New Size(290, 51)
+        yourExpenseLabel.TabIndex = 4
+        yourExpenseLabel.Text = "Your Expenses"
+        ' 
         ' Chore
         ' 
         Chore.Location = New Point(4, 4)
+        Chore.Margin = New Padding(5, 6, 5, 6)
         Chore.Name = "Chore"
-        Chore.Size = New Size(447, 519)
+        Chore.Size = New Size(772, 1096)
         Chore.TabIndex = 2
         Chore.Text = "Chore"
         Chore.UseVisualStyleBackColor = True
@@ -90,18 +164,20 @@ Partial Class Form1
         Home.Controls.Add(roomateTaskslbl)
         Home.Controls.Add(yourTaskslbl)
         Home.Location = New Point(4, 4)
+        Home.Margin = New Padding(5, 6, 5, 6)
         Home.Name = "Home"
-        Home.Padding = New Padding(3)
-        Home.Size = New Size(447, 519)
+        Home.Padding = New Padding(5, 6, 5, 6)
+        Home.Size = New Size(772, 1096)
         Home.TabIndex = 1
         Home.Text = "Home"
         Home.UseVisualStyleBackColor = True
         ' 
         ' addTaskHomeScreenBtn
         ' 
-        addTaskHomeScreenBtn.Location = New Point(116, 435)
+        addTaskHomeScreenBtn.Location = New Point(199, 870)
+        addTaskHomeScreenBtn.Margin = New Padding(5, 6, 5, 6)
         addTaskHomeScreenBtn.Name = "addTaskHomeScreenBtn"
-        addTaskHomeScreenBtn.Size = New Size(203, 63)
+        addTaskHomeScreenBtn.Size = New Size(348, 126)
         addTaskHomeScreenBtn.TabIndex = 5
         addTaskHomeScreenBtn.Text = "Add Task"
         addTaskHomeScreenBtn.UseVisualStyleBackColor = True
@@ -112,9 +188,10 @@ Partial Class Form1
         roomatesTasksHomeScreenListView.Alignment = ListViewAlignment.Default
         roomatesTasksHomeScreenListView.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader3, ColumnHeader4, ColumnHeader5})
         roomatesTasksHomeScreenListView.GridLines = True
-        roomatesTasksHomeScreenListView.Location = New Point(6, 284)
+        roomatesTasksHomeScreenListView.Location = New Point(10, 568)
+        roomatesTasksHomeScreenListView.Margin = New Padding(5, 6, 5, 6)
         roomatesTasksHomeScreenListView.Name = "roomatesTasksHomeScreenListView"
-        roomatesTasksHomeScreenListView.Size = New Size(424, 135)
+        roomatesTasksHomeScreenListView.Size = New Size(724, 266)
         roomatesTasksHomeScreenListView.TabIndex = 4
         roomatesTasksHomeScreenListView.UseCompatibleStateImageBehavior = False
         roomatesTasksHomeScreenListView.View = View.Details
@@ -149,9 +226,10 @@ Partial Class Form1
         yourTasksHomeScreenListView.Alignment = ListViewAlignment.Default
         yourTasksHomeScreenListView.Columns.AddRange(New ColumnHeader() {taskName, Description, dueDate, frequency, assignedTo})
         yourTasksHomeScreenListView.GridLines = True
-        yourTasksHomeScreenListView.Location = New Point(6, 85)
+        yourTasksHomeScreenListView.Location = New Point(10, 170)
+        yourTasksHomeScreenListView.Margin = New Padding(5, 6, 5, 6)
         yourTasksHomeScreenListView.Name = "yourTasksHomeScreenListView"
-        yourTasksHomeScreenListView.Size = New Size(424, 135)
+        yourTasksHomeScreenListView.Size = New Size(724, 266)
         yourTasksHomeScreenListView.TabIndex = 3
         yourTasksHomeScreenListView.UseCompatibleStateImageBehavior = False
         yourTasksHomeScreenListView.View = View.Details
@@ -183,28 +261,31 @@ Partial Class Form1
         ' roomateTaskslbl
         ' 
         roomateTaskslbl.AutoSize = True
-        roomateTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
-        roomateTaskslbl.Location = New Point(16, 243)
+        roomateTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        roomateTaskslbl.Location = New Point(27, 486)
+        roomateTaskslbl.Margin = New Padding(5, 0, 5, 0)
         roomateTaskslbl.Name = "roomateTaskslbl"
-        roomateTaskslbl.Size = New Size(205, 28)
+        roomateTaskslbl.Size = New Size(360, 51)
         roomateTaskslbl.TabIndex = 1
         roomateTaskslbl.Text = "Roomates's  Tasks"
         ' 
         ' yourTaskslbl
         ' 
         yourTaskslbl.AutoSize = True
-        yourTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
-        yourTaskslbl.Location = New Point(16, 39)
+        yourTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTaskslbl.Location = New Point(27, 78)
+        yourTaskslbl.Margin = New Padding(5, 0, 5, 0)
         yourTaskslbl.Name = "yourTaskslbl"
-        yourTaskslbl.Size = New Size(125, 28)
+        yourTaskslbl.Size = New Size(221, 51)
         yourTaskslbl.TabIndex = 0
         yourTaskslbl.Text = "Your Tasks"
         ' 
         ' Trade
         ' 
         Trade.Location = New Point(4, 4)
+        Trade.Margin = New Padding(5, 6, 5, 6)
         Trade.Name = "Trade"
-        Trade.Size = New Size(447, 519)
+        Trade.Size = New Size(772, 1096)
         Trade.TabIndex = 3
         Trade.Text = "Trade"
         Trade.UseVisualStyleBackColor = True
@@ -212,21 +293,25 @@ Partial Class Form1
         ' Performance
         ' 
         Performance.Location = New Point(4, 4)
+        Performance.Margin = New Padding(5, 6, 5, 6)
         Performance.Name = "Performance"
-        Performance.Size = New Size(447, 519)
+        Performance.Size = New Size(772, 1096)
         Performance.TabIndex = 4
         Performance.Text = "Performance"
         Performance.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(464, 601)
+        ClientSize = New Size(795, 1202)
         Controls.Add(TabControl1)
+        Margin = New Padding(5, 6, 5, 6)
         Name = "Form1"
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
+        Expense.ResumeLayout(False)
+        Expense.PerformLayout()
         Home.ResumeLayout(False)
         Home.PerformLayout()
         ResumeLayout(False)
@@ -253,4 +338,10 @@ Partial Class Form1
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents yourTotalAmount As Label
+    Friend WithEvents yourTotalLabel As Label
+    Friend WithEvents yourExpenseList As ListView
+    Friend WithEvents yourExpenseItemColumn As ColumnHeader
+    Friend WithEvents yourExpenseCostColumn As ColumnHeader
+    Friend WithEvents yourExpenseLabel As Label
 End Class
