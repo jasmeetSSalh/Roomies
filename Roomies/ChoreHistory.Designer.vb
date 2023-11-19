@@ -24,6 +24,9 @@ Partial Class ChoreHistory
     Private Sub InitializeComponent()
         BackBtn = New PictureBox()
         HistoryList = New ListView()
+        ChoreName = New ColumnHeader()
+        ChoreAssignee = New ColumnHeader()
+        DateCompleted = New ColumnHeader()
         CType(BackBtn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -39,11 +42,29 @@ Partial Class ChoreHistory
         ' 
         ' HistoryList
         ' 
+        HistoryList.Columns.AddRange(New ColumnHeader() {ChoreName, ChoreAssignee, DateCompleted})
         HistoryList.Location = New Point(24, 81)
         HistoryList.Name = "HistoryList"
-        HistoryList.Size = New Size(399, 379)
+        HistoryList.Size = New Size(400, 379)
+        HistoryList.Sorting = SortOrder.Ascending
         HistoryList.TabIndex = 2
         HistoryList.UseCompatibleStateImageBehavior = False
+        HistoryList.View = View.Details
+        ' 
+        ' ChoreName
+        ' 
+        ChoreName.Text = "Chore"
+        ChoreName.Width = 132
+        ' 
+        ' ChoreAssignee
+        ' 
+        ChoreAssignee.Text = "Assignee"
+        ChoreAssignee.Width = 132
+        ' 
+        ' DateCompleted
+        ' 
+        DateCompleted.Text = "Date Completed"
+        DateCompleted.Width = 132
         ' 
         ' ChoreHistory
         ' 
@@ -58,4 +79,7 @@ Partial Class ChoreHistory
     End Sub
     Friend WithEvents BackBtn As PictureBox
     Friend WithEvents HistoryList As ListView
+    Friend WithEvents DateCompleted As ColumnHeader
+    Friend WithEvents ChoreName As ColumnHeader
+    Friend WithEvents ChoreAssignee As ColumnHeader
 End Class

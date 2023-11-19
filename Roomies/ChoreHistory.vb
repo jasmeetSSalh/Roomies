@@ -1,4 +1,6 @@
-﻿Public Class ChoreHistory
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class ChoreHistory
     Inherits UserControl
 
     Private _completedChores As New List(Of CompletedChores)
@@ -19,5 +21,14 @@
 
     Private Sub ChoreHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        For Each chore In _completedChores
+
+            Dim item As New ListViewItem(chore.TaskName)
+
+            item.SubItems.Add(chore.AssignedTo)
+            item.SubItems.Add(chore.CompletedOn.Value.ToString())
+
+            Me.HistoryList.Items.Add(item)
+        Next
     End Sub
 End Class
