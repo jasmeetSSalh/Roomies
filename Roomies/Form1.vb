@@ -204,4 +204,8 @@ Public Class Form1
 
         BalanceSheet1.DataGridView1.DataSource = expenses
     End Sub
+
+    Private Sub addExpenseButton_Click(sender As Object, e As EventArgs) Handles addExpenseButton.Click
+        AddExpense1.Show()
+    End Sub
 End Class

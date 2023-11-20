@@ -5,6 +5,8 @@
     Public Property Amount As Decimal
     Public Property DateAdded As DateTime
 
+    Public Property Notes As String
+
     Private _participants As List(Of String)
     Public Property Participants As List(Of String)
         Get
