@@ -210,13 +210,13 @@ Public Class Form1
     Private Sub Trade_Enter(sender As Object, e As EventArgs) Handles Trade.Enter
         ' populating the combo boxes in the trade tab
 
-        selfComboBox.Items.Clear()
+        offerComboBox.Items.Clear()
         personComboBox.Items.Clear()
-        mateComboBox.Items.Clear()
+        taskComboBox.Items.Clear()
 
 
         For Each task As Task In yourTasksArray
-            selfComboBox.Items.Add(task.TaskName)
+            offerComboBox.Items.Add(task.TaskName)
         Next
 
         For Each person As String In roommatePersonList
@@ -226,7 +226,7 @@ Public Class Form1
         personComboBox.Items.Remove(yourName)
 
         'set selected item
-        selfComboBox.SelectedIndex = 0
+        offerComboBox.SelectedIndex = 0
 
         personComboBox.SelectedIndex = 0
 
@@ -241,19 +241,53 @@ Public Class Form1
     End Sub
 
     Private Sub personComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles personComboBox.SelectedIndexChanged
-        mateComboBox.Items.Clear()
+        taskComboBox.Items.Clear()
 
-        'for each taskarray
+        'for each task assigned to selected person
         For Each task As Task In roommatesTasksArray
             If task.AssignedTo = personComboBox.SelectedItem Then
-                mateComboBox.Items.Add(task.TaskName)
+                taskComboBox.Items.Add(task.TaskName)
             End If
         Next
 
-        mateComboBox.SelectedIndex = 0
+        taskComboBox.SelectedIndex = 0
     End Sub
 
     Private Sub TradeBtn_Click(sender As Object, e As EventArgs) Handles TradeBtn.Click
         MessageBox.Show("Trade Sent!")
+        'wait for 1.5 seconds to mimic trade acceptence
+        System.Threading.Thread.Sleep(1500)
+
+        MessageBox.Show("Trade Accepted!")
+
+        'swap offercombobox and taskcombobox tasks
+        Dim offerTask As Task = yourTasksArray.Find(Function(x) x.TaskName = offerComboBox.SelectedItem)
+        Dim roommateTask As Task = roommatesTasksArray.Find(Function(x) x.TaskName = taskComboBox.SelectedItem)
+
+
+        roommatesTasksArray.Remove(roommateTask)
+        yourTasksArray.Remove(offerTask)
+
+        offerTask.AssignedTo = personComboBox.SelectedItem
+        roommateTask.AssignedTo = yourName
+
+        yourTasksArray.Add(roommateTask)
+        roommatesTasksArray.Add(offerTask)
+
+    End Sub
+
+    Private Sub ClearHomeScreen()
+
+        yourTasksHomeScreenListView.Items.Clear()
+        roomatesTasksHomeScreenListView.Items.Clear()
+
+    End Sub
+
+    ' creating a Enter handler for homepage to automatically update lists to any changes on other tabs
+    Private Sub Home_Enter(sender As Object, e As EventArgs) Handles Home.Enter
+        ClearHomeScreen()
+
+        PopulateYourHomeScreenListView(yourTasksArray)
+        PopulateRoomateHomeScreenListView(roommatesTasksArray)
     End Sub
 End Class

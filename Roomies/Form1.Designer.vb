@@ -55,9 +55,9 @@ Partial Class Form1
         personComboBox = New ComboBox()
         TradeBtn = New Button()
         mateTradeLabel = New Label()
-        mateComboBox = New ComboBox()
+        taskComboBox = New ComboBox()
         selfTradeLabel = New Label()
-        selfComboBox = New ComboBox()
+        offerComboBox = New ComboBox()
         Performance = New TabPage()
         TabControl1.SuspendLayout()
         Chore.SuspendLayout()
@@ -288,9 +288,9 @@ Partial Class Form1
         Trade.Controls.Add(personComboBox)
         Trade.Controls.Add(TradeBtn)
         Trade.Controls.Add(mateTradeLabel)
-        Trade.Controls.Add(mateComboBox)
+        Trade.Controls.Add(taskComboBox)
         Trade.Controls.Add(selfTradeLabel)
-        Trade.Controls.Add(selfComboBox)
+        Trade.Controls.Add(offerComboBox)
         Trade.Location = New Point(4, 4)
         Trade.Name = "Trade"
         Trade.Size = New Size(447, 519)
@@ -331,13 +331,13 @@ Partial Class Form1
         mateTradeLabel.Size = New Size(105, 15)
         mateTradeLabel.TabIndex = 3
         mateTradeLabel.Text = "The Task You Want"' 
-        ' mateComboBox
+        ' taskComboBox
         ' 
-        mateComboBox.FormattingEnabled = True
-        mateComboBox.Location = New Point(22, 246)
-        mateComboBox.Name = "mateComboBox"
-        mateComboBox.Size = New Size(240, 23)
-        mateComboBox.TabIndex = 2
+        taskComboBox.FormattingEnabled = True
+        taskComboBox.Location = New Point(22, 246)
+        taskComboBox.Name = "taskComboBox"
+        taskComboBox.Size = New Size(240, 23)
+        taskComboBox.TabIndex = 2
         ' 
         ' selfTradeLabel
         ' 
@@ -347,13 +347,13 @@ Partial Class Form1
         selfTradeLabel.Size = New Size(100, 15)
         selfTradeLabel.TabIndex = 1
         selfTradeLabel.Text = "Your Task to Offer"' 
-        ' selfComboBox
+        ' offerComboBox
         ' 
-        selfComboBox.FormattingEnabled = True
-        selfComboBox.Location = New Point(22, 60)
-        selfComboBox.Name = "selfComboBox"
-        selfComboBox.Size = New Size(240, 23)
-        selfComboBox.TabIndex = 0
+        offerComboBox.FormattingEnabled = True
+        offerComboBox.Location = New Point(22, 60)
+        offerComboBox.Name = "offerComboBox"
+        offerComboBox.Size = New Size(240, 23)
+        offerComboBox.TabIndex = 0
         ' 
         ' Performance
         ' 
@@ -416,9 +416,9 @@ Partial Class Form1
     Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents Button1 As Button
     Friend WithEvents mateTradeLabel As Label
-    Friend WithEvents mateComboBox As ComboBox
+    Friend WithEvents taskComboBox As ComboBox
     Friend WithEvents selfTradeLabel As Label
-    Friend WithEvents selfComboBox As ComboBox
+    Friend WithEvents offerComboBox As ComboBox
     Friend WithEvents TradeBtn As Button
     Friend WithEvents personTradeLabel As Label
     Friend WithEvents personComboBox As ComboBox
