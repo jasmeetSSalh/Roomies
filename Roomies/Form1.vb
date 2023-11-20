@@ -1,4 +1,8 @@
-﻿Public Class Form1
+﻿Imports System.ComponentModel
+
+Public Class Form1
+    Dim expenses As New BindingList(Of Expense)()
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Test data for testing the PopulateListView function
         ''''''''''''''''''''''''''''''''''''''''''''' TEST
@@ -189,5 +193,15 @@
 
     'xxxxxxxxxxxxxxxxxxxxxxx______EXPENSE PAGE CODE ENDS______xxxxxxxxxxxxxxxxxxxxxxxxxx
 
+    Private Sub ViewBalanceSheet_Click(sender As Object, e As EventArgs) Handles ViewBalanceSheet.Click
+        BalanceSheet1.Show()
+    End Sub
 
+    Private Sub BalanceSheet1_Load(sender As Object, e As EventArgs) Handles BalanceSheet1.Load
+
+        expenses.Add(New Expense With {.Name = "Groceries", .Amount = 100D, .DateAdded = DateTime.Now, .Participants = New List(Of String)({"Alice", "Bob"})})
+        expenses.Add(New Expense With {.Name = "Electricity Bill", .Amount = 60D, .DateAdded = DateTime.Now.AddDays(-10), .Participants = New List(Of String)({"Alice", "Charlie", "Alice", "Charlie"})})
+
+        BalanceSheet1.DataGridView1.DataSource = expenses
+    End Sub
 End Class
