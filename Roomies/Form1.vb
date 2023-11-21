@@ -299,11 +299,6 @@ Public Class Form1
     End Sub
 
     Private Sub TradeBtn_Click(sender As Object, e As EventArgs) Handles TradeBtn.Click
-        MessageBox.Show("Trade Sent!")
-        'wait for 1.5 seconds to mimic trade acceptence
-        System.Threading.Thread.Sleep(1500)
-
-        MessageBox.Show("Trade Accepted!")
 
         'swap offercombobox and taskcombobox tasks
         Dim offerTask As Task = yourTasksArray.Find(Function(x) x.TaskName = offerComboBox.SelectedItem)
@@ -318,6 +313,10 @@ Public Class Form1
 
         yourTasksArray.Add(roommateTask)
         roommatesTasksArray.Add(offerTask)
+
+        MessageBox.Show("Trade Sent and Accepted!")
+
+        TabControl1.SelectedTab = Home
 
     End Sub
 
