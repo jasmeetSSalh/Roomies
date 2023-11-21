@@ -1,18 +1,20 @@
+Imports System.ComponentModel
+
 Public Class Form1
     Private completedChores As New List(Of CompletedChores)
     Public expenses As New BindingList(Of Expense)()
-  
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Test data for testing the PopulateListView function
         ''''''''''''''''''''''''''''''''''''''''''''' TEST
-        Dim task1 As New Task("Garbage", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "P1")
-        Dim task2 As New Task("Cooking", "Description 2", DateTime.Now.AddDays(2), "None", "Nothing", "P1")
+        Dim task1 As New Task("Garbage", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "Andrew")
+        Dim task2 As New Task("Cooking", "Description 2", DateTime.Now.AddDays(2), "None", "Nothing", "Andrew")
 
         yourTasksArray.Add(task1)
         yourTasksArray.Add(task2)
 
-        Dim task3 As New Task("Mopping", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "P2")
-        Dim task4 As New Task("Fixing", "Description 2", DateTime.Now.AddDays(2), "None", "Nothing", "P2")
+        Dim task3 As New Task("Mopping", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "Nahid")
+        Dim task4 As New Task("Fixing", "Description 2", DateTime.Now.AddDays(2), "None", "Nothing", "Nahid")
 
         roommatesTasksArray.Add(task3)
         roommatesTasksArray.Add(task4)
@@ -24,8 +26,8 @@ Public Class Form1
         PopulateListViewTasks(ChoreListView, roommatesTasksArray)
 
         '''''''''''''''''''''''''''''''''''''''''''''' REMOVE THE CODE AFTER WE ARE DONE TESTING
-        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "P1", DateTime.Now.AddDays(-1))
-        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "P2", DateTime.Now.AddDays(-2))
+        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "Andrew", DateTime.Now.AddDays(-1))
+        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "Nahid", DateTime.Now.AddDays(-2))
 
         completedChores.Add(completedChore1)
         completedChores.Add(completedChore2)
@@ -170,11 +172,9 @@ Public Class Form1
     ' Your Roommates Tasks Array
     Dim roommatesTasksArray As New List(Of Task)()
 
-    Dim roommatePersonList As New List(Of String) From {"P1", "P2"}
+    Dim roommatePersonList As New List(Of String) From {"Andrew", "Nahid"}
 
-    Dim yourName As String = "P1"
-
-
+    Dim yourName As String = "Andrew"
 
     'xxxxxxxxxxxxxxxxxxxxxxx______HOMEPAGE CODE______xxxxxxxxxxxxxxxxxxxxxxxxxx
 
