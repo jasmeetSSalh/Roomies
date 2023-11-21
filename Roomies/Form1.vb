@@ -1,21 +1,9 @@
-﻿
-Imports System.Numerics
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
-
-Public Class Form1
+﻿Public Class Form1
 
     Private CheckBoxArray() As CheckBox ' Declare an array to hold CheckBoxes
     Private completedChores As New List(Of CompletedChores)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        CheckBoxArray = New CheckBox() {CheckBox1, CheckBox2, CheckBox3, CheckBox4, CheckBox5, CheckBox6, CheckBox7, CheckBox8, CheckBox9, CheckBox10, CheckBox11, CheckBox12, CheckBox13}
-
-        ' Add the event handler to each CheckBox
-        For Each chkBox As CheckBox In CheckBoxArray
-            AddHandler chkBox.CheckedChanged, AddressOf CheckBox_CheckedChanged
-        Next
-
         ' Test data for testing the PopulateListView function
         ''''''''''''''''''''''''''''''''''''''''''''' TEST
         Dim task1 As New Task("Garbage", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "P1")
@@ -36,9 +24,12 @@ Public Class Form1
         PopulateListViewTasks(ChoreListView, yourTasksArray)
         PopulateListViewTasks(ChoreListView, roommatesTasksArray)
 
-        UpdateCheckBoxesVisibility()
         '''''''''''''''''''''''''''''''''''''''''''''' REMOVE THE CODE AFTER WE ARE DONE TESTING
+        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "P1", DateTime.Now.AddDays(-1))
+        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "P2", DateTime.Now.AddDays(-2))
 
+        completedChores.Add(completedChore1)
+        completedChores.Add(completedChore2)
     End Sub
 
     ' Task Definition
@@ -269,7 +260,6 @@ Public Class Form1
             ChoreListView.Items.Clear()
             PopulateListViewTasks(ChoreListView, yourTasksArray)
             PopulateListViewTasks(ChoreListView, roommatesTasksArray)
-            UpdateCheckBoxesVisibility()
 
         End If
     End Sub
@@ -294,8 +284,16 @@ Public Class Form1
                 Exit Sub
             ElseIf roommatesTasksArray.Count > 0 AndAlso checkBoxNumber >= yourTasksArray.Count AndAlso checkBoxNumber < yourTasksArray.Count + roommatesTasksArray.Count Then
                 ' Remove the task from roommatesTasksArray
+                Dim taskName As String = roommatesTasksArray.ElementAt(checkBoxNumber).TaskName
+                Dim taskDescription As String = roommatesTasksArray.ElementAt(checkBoxNumber).Description
+                Dim taskDate As DateTime = roommatesTasksArray.ElementAt(checkBoxNumber).DueDate
+                Dim taskFrequency As String = roommatesTasksArray.ElementAt(checkBoxNumber).Frequency
+                Dim taskException As String = roommatesTasksArray.ElementAt(checkBoxNumber).Exceptions
+                Dim taskAssignedTo As String = roommatesTasksArray.ElementAt(checkBoxNumber).AssignedTo
+                Dim todayDate As DateTime = DateTime.Now()
 
-
+                Dim currentCompletedChore As New CompletedChores(taskName, taskDescription, taskDate, taskFrequency, taskException, taskAssignedTo, todayDate)
+                completedChores.Add(currentCompletedChore)
 
                 Dim roommatesIndex As Integer = checkBoxNumber - yourTasksArray.Count
                 roommatesTasksArray.RemoveAt(roommatesIndex)
@@ -307,32 +305,17 @@ Public Class Form1
         End If
     End Sub
 
-    'Update the number of checkboxes
-    Private Sub UpdateCheckBoxesVisibility()
-        ' Dynamically set the visibility of checkboxes based on the total count of tasks
-        Dim totalTasksCount As Integer = yourTasksArray.Count + roommatesTasksArray.Count
-
-        For i As Integer = 0 To CheckBoxArray.Length - 1
-            If i < totalTasksCount Then
-                CheckBoxArray(i).Visible = True
-            Else
-                CheckBoxArray(i).Visible = False
-            End If
-        Next
-    End Sub
-
-    Private Sub ChoreHistory_Load(sender As Object, e As EventArgs) Handles ChoreHistory.Load
-        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "P1", DateTime.Now.AddDays(-1))
-        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "P2", DateTime.Now.AddDays(-2))
-
-        completedChores.Add(completedChore1)
-        completedChores.Add(completedChore2)
-
-        ChoreHistory.CompletedChores = completedChores
-    End Sub
-
-
     Private Sub ChoreCompletionHistoryBtn_Click(sender As Object, e As EventArgs) Handles ChoreCompletionHistoryBtn.Click
+
+        For Each Value In completedChores
+
+            Dim item As New ListViewItem(Value.TaskName)
+
+            item.SubItems.Add(Value.AssignedTo)
+            item.SubItems.Add(Value.CompletedOn.Value.ToString())
+
+            ChoreHistory.HistoryList.Items.Add(item)
+        Next
 
         ChoreHistory.Show()
     End Sub
@@ -430,5 +413,28 @@ Public Class Form1
         PopulateRoomateHomeScreenListView(roommatesTasksArray)
     End Sub
 
+    Private Sub ChoreListView_ItemChecked(sender As Object, e As ItemCheckedEventArgs) Handles ChoreListView.ItemChecked
+        Dim checkedItem As ListViewItem = e.Item
 
+        If checkedItem IsNot Nothing AndAlso checkedItem.Checked Then
+
+            Dim taskName As String = checkedItem.Text
+            Dim description As String = checkedItem.SubItems(1).Text
+            Dim dueDate As String = checkedItem.SubItems(2).Text
+            Dim interval As String = checkedItem.SubItems(3).Text
+            Dim assignee As String = checkedItem.SubItems(4).Text
+            Dim completedChore As New CompletedChores(taskName, description, dueDate, interval, "", assignee, DateTime.Now)
+            completedChores.Add(completedChore)
+            MessageBox.Show("You have completed the Task: " & taskName & vbCrLf & "It will now be removed")
+
+            BeginInvoke(New MethodInvoker(Sub() RemoveCheckedItem(checkedItem)))
+        End If
+    End Sub
+
+    Private Sub RemoveCheckedItem(item As ListViewItem)
+        ' Perform the removal of the item
+        If ChoreListView.Items.Contains(item) Then
+            ChoreListView.Items.Remove(item)
+        End If
+    End Sub
 End Class
