@@ -22,17 +22,17 @@ Partial Class BalanceSheet
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         DataGridView1 = New DataGridView()
+        BalanceSheetBackBtn = New PictureBox()
+        householdTotalAmount = New Label()
+        householdTotalLabel = New Label()
         ExpenseColumn = New DataGridViewTextBoxColumn()
         AmountColumn = New DataGridViewTextBoxColumn()
         DateColumn = New DataGridViewTextBoxColumn()
         Notes = New DataGridViewTextBoxColumn()
         ParticipantsColumn = New DataGridViewTextBoxColumn()
-        BalanceSheetBackBtn = New PictureBox()
-        householdTotalAmount = New Label()
-        householdTotalLabel = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(BalanceSheetBackBtn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -46,26 +46,55 @@ Partial Class BalanceSheet
         DataGridView1.ColumnHeadersHeight = 40
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {ExpenseColumn, AmountColumn, DateColumn, Notes, ParticipantsColumn})
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = SystemColors.Window
-        DataGridViewCellStyle3.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
-        DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
-        DataGridView1.Location = New Point(22, 116)
-        DataGridView1.Margin = New Padding(5, 6, 5, 6)
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Window
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.Location = New Point(3, 58)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
         DataGridView1.RowHeadersVisible = False
         DataGridView1.RowHeadersWidth = 72
         DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
-        DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
         DataGridView1.RowTemplate.Height = 50
-        DataGridView1.Size = New Size(718, 663)
+        DataGridView1.Size = New Size(441, 332)
         DataGridView1.TabIndex = 0
+        ' 
+        ' BalanceSheetBackBtn
+        ' 
+        BalanceSheetBackBtn.Image = My.Resources.Resources.back
+        BalanceSheetBackBtn.Location = New Point(13, 12)
+        BalanceSheetBackBtn.Name = "BalanceSheetBackBtn"
+        BalanceSheetBackBtn.Size = New Size(40, 40)
+        BalanceSheetBackBtn.SizeMode = PictureBoxSizeMode.Zoom
+        BalanceSheetBackBtn.TabIndex = 1
+        BalanceSheetBackBtn.TabStop = False
+        ' 
+        ' householdTotalAmount
+        ' 
+        householdTotalAmount.AutoSize = True
+        householdTotalAmount.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        householdTotalAmount.Location = New Point(216, 400)
+        householdTotalAmount.Name = "householdTotalAmount"
+        householdTotalAmount.Size = New Size(69, 28)
+        householdTotalAmount.TabIndex = 9
+        householdTotalAmount.Text = "$0.00"
+        ' 
+        ' householdTotalLabel
+        ' 
+        householdTotalLabel.AutoSize = True
+        householdTotalLabel.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        householdTotalLabel.Location = New Point(13, 400)
+        householdTotalLabel.Name = "householdTotalLabel"
+        householdTotalLabel.Size = New Size(193, 28)
+        householdTotalLabel.TabIndex = 8
+        householdTotalLabel.Text = "Household Total:"
         ' 
         ' ExpenseColumn
         ' 
@@ -74,7 +103,7 @@ Partial Class BalanceSheet
         ExpenseColumn.MinimumWidth = 9
         ExpenseColumn.Name = "ExpenseColumn"
         ExpenseColumn.ReadOnly = True
-        ExpenseColumn.Width = 150
+        ExpenseColumn.Width = 90
         ' 
         ' AmountColumn
         ' 
@@ -83,7 +112,7 @@ Partial Class BalanceSheet
         AmountColumn.MinimumWidth = 9
         AmountColumn.Name = "AmountColumn"
         AmountColumn.ReadOnly = True
-        AmountColumn.Width = 130
+        AmountColumn.Width = 65
         ' 
         ' DateColumn
         ' 
@@ -92,7 +121,6 @@ Partial Class BalanceSheet
         DateColumn.MinimumWidth = 9
         DateColumn.Name = "DateColumn"
         DateColumn.ReadOnly = True
-        DateColumn.Width = 175
         ' 
         ' Notes
         ' 
@@ -101,61 +129,26 @@ Partial Class BalanceSheet
         Notes.MinimumWidth = 9
         Notes.Name = "Notes"
         Notes.ReadOnly = True
-        Notes.Width = 130
+        Notes.Width = 80
         ' 
         ' ParticipantsColumn
         ' 
-        ParticipantsColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         ParticipantsColumn.DataPropertyName = "ParticipantsString"
         ParticipantsColumn.HeaderText = "Participants"
         ParticipantsColumn.MinimumWidth = 9
         ParticipantsColumn.Name = "ParticipantsColumn"
         ParticipantsColumn.ReadOnly = True
         ' 
-        ' BalanceSheetBackBtn
-        ' 
-        BalanceSheetBackBtn.Image = My.Resources.Resources.back
-        BalanceSheetBackBtn.Location = New Point(22, 24)
-        BalanceSheetBackBtn.Margin = New Padding(5, 6, 5, 6)
-        BalanceSheetBackBtn.Name = "BalanceSheetBackBtn"
-        BalanceSheetBackBtn.Size = New Size(69, 80)
-        BalanceSheetBackBtn.SizeMode = PictureBoxSizeMode.Zoom
-        BalanceSheetBackBtn.TabIndex = 1
-        BalanceSheetBackBtn.TabStop = False
-        ' 
-        ' householdTotalAmount
-        ' 
-        householdTotalAmount.AutoSize = True
-        householdTotalAmount.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
-        householdTotalAmount.Location = New Point(370, 799)
-        householdTotalAmount.Margin = New Padding(5, 0, 5, 0)
-        householdTotalAmount.Name = "householdTotalAmount"
-        householdTotalAmount.Size = New Size(123, 51)
-        householdTotalAmount.TabIndex = 9
-        householdTotalAmount.Text = "$0.00"
-        ' 
-        ' householdTotalLabel
-        ' 
-        householdTotalLabel.AutoSize = True
-        householdTotalLabel.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
-        householdTotalLabel.Location = New Point(22, 799)
-        householdTotalLabel.Margin = New Padding(5, 0, 5, 0)
-        householdTotalLabel.Name = "householdTotalLabel"
-        householdTotalLabel.Size = New Size(338, 51)
-        householdTotalLabel.TabIndex = 8
-        householdTotalLabel.Text = "Household Total:"
-        ' 
         ' BalanceSheet
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(householdTotalAmount)
         Controls.Add(householdTotalLabel)
         Controls.Add(BalanceSheetBackBtn)
         Controls.Add(DataGridView1)
-        Margin = New Padding(5, 6, 5, 6)
         Name = "BalanceSheet"
-        Size = New Size(766, 1038)
+        Size = New Size(447, 519)
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(BalanceSheetBackBtn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -164,11 +157,11 @@ Partial Class BalanceSheet
 
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BalanceSheetBackBtn As PictureBox
+    Friend WithEvents householdTotalAmount As Label
+    Friend WithEvents householdTotalLabel As Label
     Friend WithEvents ExpenseColumn As DataGridViewTextBoxColumn
     Friend WithEvents AmountColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateColumn As DataGridViewTextBoxColumn
     Friend WithEvents Notes As DataGridViewTextBoxColumn
     Friend WithEvents ParticipantsColumn As DataGridViewTextBoxColumn
-    Friend WithEvents householdTotalAmount As Label
-    Friend WithEvents householdTotalLabel As Label
 End Class
