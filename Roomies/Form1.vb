@@ -196,6 +196,19 @@ Public Class Form1
     End Sub
 
     'xxxxxxxxxxxxxxxxxxxxxxx______HOMEPAGE CODE ENDS______xxxxxxxxxxxxxxxxxxxxxxxxxx
+    Private Sub ChoreCompletionHistoryBtn_Click(sender As Object, e As EventArgs) Handles ChoreCompletionHistoryBtn.Click
+        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "P1", DateTime.Now.AddDays(-1))
+        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "P2", DateTime.Now.AddDays(-2))
+
+
+        Dim completedChores As New List(Of CompletedChores) From {
+            completedChore1,
+            completedChore2
+        }
+
+        ChoreHistory.CompletedChores = completedChores
+        ChoreHistory.Show()
+    End Sub
 
     Private Sub ChoreListScroll_Scroll(sender As Object, e As ScrollEventArgs) Handles ChoreListScroll.Scroll
         Dim maxIndex As Integer = ChoreListView.Items.Count - 1
@@ -264,7 +277,6 @@ Public Class Form1
         Dim offerTask As Task = yourTasksArray.Find(Function(x) x.TaskName = offerComboBox.SelectedItem)
         Dim roommateTask As Task = roommatesTasksArray.Find(Function(x) x.TaskName = taskComboBox.SelectedItem)
 
-
         roommatesTasksArray.Remove(roommateTask)
         yourTasksArray.Remove(offerTask)
 
@@ -280,6 +292,9 @@ Public Class Form1
 
         yourTasksHomeScreenListView.Items.Clear()
         roomatesTasksHomeScreenListView.Items.Clear()
+
+    End Sub
+
 
     End Sub
 

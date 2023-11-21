@@ -22,9 +22,11 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         Expense = New TabPage()
         Chore = New TabPage()
+
         addTaskChoreBtn = New Button()
         ChoreTitle = New Label()
         ChoreListScroll = New VScrollBar()
@@ -34,6 +36,10 @@ Partial Class Form1
         ColumnHeader8 = New ColumnHeader()
         ColumnHeader9 = New ColumnHeader()
         ColumnHeader10 = New ColumnHeader()
+
+        ChoreCompletionHistoryBtn = New Button()
+        ChoreHistory = New ChoreHistory()
+
         Home = New TabPage()
         addTaskHomeScreenBtn = New Button()
         roomatesTasksHomeScreenListView = New ListView()
@@ -51,6 +57,7 @@ Partial Class Form1
         roomateTaskslbl = New Label()
         yourTaskslbl = New Label()
         Trade = New TabPage()
+
         personTradeLabel = New Label()
         personComboBox = New ComboBox()
         TradeBtn = New Button()
@@ -59,6 +66,7 @@ Partial Class Form1
         selfTradeLabel = New Label()
         offerComboBox = New ComboBox()
         Performance = New TabPage()
+
         TabControl1.SuspendLayout()
         Chore.SuspendLayout()
         Home.SuspendLayout()
@@ -72,8 +80,7 @@ Partial Class Form1
         TabControl1.Controls.Add(Chore)
         TabControl1.Controls.Add(Home)
         TabControl1.Controls.Add(Trade)
-        TabControl1.Controls.Add(Performance)
-        TabControl1.ItemSize = New Size(90, 50)
+        TabControl1.ItemSize = New Size(113, 50)
         TabControl1.Location = New Point(7, 12)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
@@ -93,10 +100,15 @@ Partial Class Form1
         ' 
         ' Chore
         ' 
+
         Chore.Controls.Add(addTaskChoreBtn)
         Chore.Controls.Add(ChoreTitle)
         Chore.Controls.Add(ChoreListScroll)
         Chore.Controls.Add(ChoreListView)
+
+        Chore.Controls.Add(ChoreHistory)
+        Chore.Controls.Add(ChoreCompletionHistoryBtn)
+
         Chore.Location = New Point(4, 4)
         Chore.Name = "Chore"
         Chore.Size = New Size(447, 519)
@@ -104,6 +116,7 @@ Partial Class Form1
         Chore.Text = "Chore"
         Chore.UseVisualStyleBackColor = True
         ' 
+
         ' addTaskChoreBtn
         ' 
         addTaskChoreBtn.Location = New Point(120, 415)
@@ -167,6 +180,24 @@ Partial Class Form1
         ' 
         ColumnHeader10.Text = "Assigned To"
         ColumnHeader10.Width = 80
+
+        ' ChoreCompletionHistoryBtn
+        ' 
+        ChoreCompletionHistoryBtn.Location = New Point(17, 449)
+        ChoreCompletionHistoryBtn.Name = "ChoreCompletionHistoryBtn"
+        ChoreCompletionHistoryBtn.Size = New Size(106, 50)
+        ChoreCompletionHistoryBtn.TabIndex = 0
+        ChoreCompletionHistoryBtn.Text = "History"
+        ChoreCompletionHistoryBtn.UseVisualStyleBackColor = True
+        ' 
+        ' ChoreHistory
+        ' 
+        ChoreHistory.Location = New Point(0, 0)
+        ChoreHistory.Name = "ChoreHistory"
+        ChoreHistory.Size = New Size(447, 519)
+        ChoreHistory.TabIndex = 1
+        ChoreHistory.Visible = False
+
         ' 
         ' Home
         ' 
@@ -374,7 +405,9 @@ Partial Class Form1
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
         Chore.ResumeLayout(False)
+
         Chore.PerformLayout()
+
         Home.ResumeLayout(False)
         Home.PerformLayout()
         Trade.ResumeLayout(False)
@@ -387,7 +420,6 @@ Partial Class Form1
     Friend WithEvents Home As TabPage
     Friend WithEvents Chore As TabPage
     Friend WithEvents Trade As TabPage
-    Friend WithEvents Performance As TabPage
     Friend WithEvents roomateTaskslbl As Label
     Friend WithEvents yourTaskslbl As Label
     Friend WithEvents yourTasksHomeScreenListView As ListView
@@ -422,4 +454,7 @@ Partial Class Form1
     Friend WithEvents TradeBtn As Button
     Friend WithEvents personTradeLabel As Label
     Friend WithEvents personComboBox As ComboBox
+    Friend WithEvents ChoreCompletionHistoryBtn As Button
+    Friend WithEvents ChoreHistory As ChoreHistory
+
 End Class
