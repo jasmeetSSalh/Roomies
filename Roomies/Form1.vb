@@ -1,4 +1,7 @@
 ﻿
+Imports System.Numerics
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
+
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Test data for testing the PopulateListView function
@@ -110,8 +113,47 @@ Public Class Form1
     Dim yourTasksArray As New List(Of Task)()
 
     ' Function to add tasks to yourTasksArray - used to add tasks from the task creation form
-    Public Sub AddTask(task As Task)
+    Public Sub AddTaskSelf(task As Task)
+        task.AssignedTo = yourName
         yourTasksArray.Add(task)
+    End Sub
+
+    Public Sub DistributeTask(newtask As Task)
+        'maximum integer size
+        Dim leastTasks As Integer = 32766
+        Dim roommateName As String = ""
+
+        If yourTasksArray.Count < leastTasks Then
+            leastTasks = yourTasksArray.Count
+            roommateName = yourName
+        End If
+
+        For Each pName In roommatePersonList
+            If pName = yourName Then
+                Continue For
+            End If
+
+            Dim count As Integer = 0
+
+            For Each task In roommatesTasksArray
+                If task.AssignedTo = pName Then
+                    count += 1
+                End If
+            Next
+
+            If count < leastTasks Then
+                leastTasks = count
+                roommateName = pName
+            End If
+        Next
+
+        newtask.AssignedTo = roommateName
+
+        If newtask.AssignedTo = yourName Then
+            yourTasksArray.Add(newtask)
+        Else
+            roommatesTasksArray.Add(newtask)
+        End If
     End Sub
 
     ' Your Roommates Tasks Array
@@ -189,8 +231,11 @@ Public Class Form1
         If result = DialogResult.OK Then
             Dim newTask As Task = choreCreationForm.CreatedTask
             PopulateYourHomeScreenListView(yourTasksArray) ' Update the list view
+            PopulateRoomateHomeScreenListView(roommatesTasksArray)
+
             'update chorelistview
             PopulateListViewTasks(ChoreListView, yourTasksArray)
+            PopulateListViewTasks(ChoreListView, roommatesTasksArray)
 
         End If
     End Sub
@@ -267,11 +312,6 @@ Public Class Form1
     End Sub
 
     Private Sub TradeBtn_Click(sender As Object, e As EventArgs) Handles TradeBtn.Click
-        MessageBox.Show("Trade Sent!")
-        'wait for 1.5 seconds to mimic trade acceptence
-        System.Threading.Thread.Sleep(1500)
-
-        MessageBox.Show("Trade Accepted!")
 
         'swap offercombobox and taskcombobox tasks
         Dim offerTask As Task = yourTasksArray.Find(Function(x) x.TaskName = offerComboBox.SelectedItem)
@@ -285,6 +325,10 @@ Public Class Form1
 
         yourTasksArray.Add(roommateTask)
         roommatesTasksArray.Add(offerTask)
+
+        MessageBox.Show("Trade Sent and Accepted!")
+
+        TabControl1.SelectedTab = Home
 
     End Sub
 
