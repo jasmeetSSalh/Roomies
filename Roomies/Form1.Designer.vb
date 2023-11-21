@@ -22,9 +22,12 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         Expense = New TabPage()
         Chore = New TabPage()
+        ChoreCompletionHistoryBtn = New Button()
+        ChoreHistory = New ChoreHistory()
         Home = New TabPage()
         addTaskHomeScreenBtn = New Button()
         roomatesTasksHomeScreenListView = New ListView()
@@ -42,8 +45,8 @@ Partial Class Form1
         roomateTaskslbl = New Label()
         yourTaskslbl = New Label()
         Trade = New TabPage()
-        Performance = New TabPage()
         TabControl1.SuspendLayout()
+        Chore.SuspendLayout()
         Home.SuspendLayout()
         SuspendLayout()
         ' 
@@ -54,8 +57,7 @@ Partial Class Form1
         TabControl1.Controls.Add(Chore)
         TabControl1.Controls.Add(Home)
         TabControl1.Controls.Add(Trade)
-        TabControl1.Controls.Add(Performance)
-        TabControl1.ItemSize = New Size(90, 50)
+        TabControl1.ItemSize = New Size(113, 50)
         TabControl1.Location = New Point(7, 12)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
@@ -75,12 +77,31 @@ Partial Class Form1
         ' 
         ' Chore
         ' 
+        Chore.Controls.Add(ChoreHistory)
+        Chore.Controls.Add(ChoreCompletionHistoryBtn)
         Chore.Location = New Point(4, 4)
         Chore.Name = "Chore"
         Chore.Size = New Size(447, 519)
         Chore.TabIndex = 2
         Chore.Text = "Chore"
         Chore.UseVisualStyleBackColor = True
+        ' 
+        ' ChoreCompletionHistoryBtn
+        ' 
+        ChoreCompletionHistoryBtn.Location = New Point(17, 449)
+        ChoreCompletionHistoryBtn.Name = "ChoreCompletionHistoryBtn"
+        ChoreCompletionHistoryBtn.Size = New Size(106, 50)
+        ChoreCompletionHistoryBtn.TabIndex = 0
+        ChoreCompletionHistoryBtn.Text = "History"
+        ChoreCompletionHistoryBtn.UseVisualStyleBackColor = True
+        ' 
+        ' ChoreHistory
+        ' 
+        ChoreHistory.Location = New Point(0, 0)
+        ChoreHistory.Name = "ChoreHistory"
+        ChoreHistory.Size = New Size(447, 519)
+        ChoreHistory.TabIndex = 1
+        ChoreHistory.Visible = False
         ' 
         ' Home
         ' 
@@ -183,7 +204,7 @@ Partial Class Form1
         ' roomateTaskslbl
         ' 
         roomateTaskslbl.AutoSize = True
-        roomateTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        roomateTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         roomateTaskslbl.Location = New Point(16, 243)
         roomateTaskslbl.Name = "roomateTaskslbl"
         roomateTaskslbl.Size = New Size(205, 28)
@@ -193,7 +214,7 @@ Partial Class Form1
         ' yourTaskslbl
         ' 
         yourTaskslbl.AutoSize = True
-        yourTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         yourTaskslbl.Location = New Point(16, 39)
         yourTaskslbl.Name = "yourTaskslbl"
         yourTaskslbl.Size = New Size(125, 28)
@@ -209,24 +230,16 @@ Partial Class Form1
         Trade.Text = "Trade"
         Trade.UseVisualStyleBackColor = True
         ' 
-        ' Performance
-        ' 
-        Performance.Location = New Point(4, 4)
-        Performance.Name = "Performance"
-        Performance.Size = New Size(447, 519)
-        Performance.TabIndex = 4
-        Performance.Text = "Performance"
-        Performance.UseVisualStyleBackColor = True
-        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(464, 601)
         Controls.Add(TabControl1)
         Name = "Form1"
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
+        Chore.ResumeLayout(False)
         Home.ResumeLayout(False)
         Home.PerformLayout()
         ResumeLayout(False)
@@ -237,7 +250,6 @@ Partial Class Form1
     Friend WithEvents Home As TabPage
     Friend WithEvents Chore As TabPage
     Friend WithEvents Trade As TabPage
-    Friend WithEvents Performance As TabPage
     Friend WithEvents roomateTaskslbl As Label
     Friend WithEvents yourTaskslbl As Label
     Friend WithEvents yourTasksHomeScreenListView As ListView
@@ -253,4 +265,6 @@ Partial Class Form1
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ChoreCompletionHistoryBtn As Button
+    Friend WithEvents ChoreHistory As ChoreHistory
 End Class
