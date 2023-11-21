@@ -22,398 +22,383 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.Expense = New System.Windows.Forms.TabPage()
-        Me.Chore = New System.Windows.Forms.TabPage()
-        Me.addTaskChoreBtn = New System.Windows.Forms.Button()
-        Me.ChoreTitle = New System.Windows.Forms.Label()
-        Me.ChoreListScroll = New System.Windows.Forms.VScrollBar()
-        Me.ChoreListView = New System.Windows.Forms.ListView()
-        Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader7 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader8 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader9 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader10 = New System.Windows.Forms.ColumnHeader()
-        Me.Home = New System.Windows.Forms.TabPage()
-        Me.addTaskHomeScreenBtn = New System.Windows.Forms.Button()
-        Me.roomatesTasksHomeScreenListView = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader4 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader()
-        Me.yourTasksHomeScreenListView = New System.Windows.Forms.ListView()
-        Me.taskName = New System.Windows.Forms.ColumnHeader()
-        Me.Description = New System.Windows.Forms.ColumnHeader()
-        Me.dueDate = New System.Windows.Forms.ColumnHeader()
-        Me.frequency = New System.Windows.Forms.ColumnHeader()
-        Me.assignedTo = New System.Windows.Forms.ColumnHeader()
-        Me.roomateTaskslbl = New System.Windows.Forms.Label()
-        Me.yourTaskslbl = New System.Windows.Forms.Label()
-        Me.Trade = New System.Windows.Forms.TabPage()
-        Me.personTradeLabel = New System.Windows.Forms.Label()
-        Me.personComboBox = New System.Windows.Forms.ComboBox()
-        Me.TradeBtn = New System.Windows.Forms.Button()
-        Me.mateTradeLabel = New System.Windows.Forms.Label()
-        Me.taskComboBox = New System.Windows.Forms.ComboBox()
-        Me.selfTradeLabel = New System.Windows.Forms.Label()
-        Me.offerComboBox = New System.Windows.Forms.ComboBox()
-        Me.Performance = New System.Windows.Forms.TabPage()
-        Me.TabControl1.SuspendLayout()
-        Me.Chore.SuspendLayout()
-        Me.Home.SuspendLayout()
-        Me.Trade.SuspendLayout()
-        Me.SuspendLayout()
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom
-        Me.TabControl1.Controls.Add(Me.Expense)
-        Me.TabControl1.Controls.Add(Me.Chore)
-        Me.TabControl1.Controls.Add(Me.Home)
-        Me.TabControl1.Controls.Add(Me.Trade)
-        Me.TabControl1.Controls.Add(Me.Performance)
-        Me.TabControl1.ItemSize = New System.Drawing.Size(90, 50)
-        Me.TabControl1.Location = New System.Drawing.Point(10, 20)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(650, 962)
-        Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.TabControl1.TabIndex = 0
-        '
-        'Expense
-        '
-        Me.Expense.Location = New System.Drawing.Point(4, 4)
-        Me.Expense.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Expense.Name = "Expense"
-        Me.Expense.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Expense.Size = New System.Drawing.Size(642, 904)
-        Me.Expense.TabIndex = 0
-        Me.Expense.Text = "Expense"
-        Me.Expense.UseVisualStyleBackColor = True
-        '
-        'Chore
-        '
-        Me.Chore.Controls.Add(Me.addTaskChoreBtn)
-        Me.Chore.Controls.Add(Me.ChoreTitle)
-        Me.Chore.Controls.Add(Me.ChoreListScroll)
-        Me.Chore.Controls.Add(Me.ChoreListView)
-        Me.Chore.Location = New System.Drawing.Point(4, 4)
-        Me.Chore.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Chore.Name = "Chore"
-        Me.Chore.Size = New System.Drawing.Size(642, 904)
-        Me.Chore.TabIndex = 2
-        Me.Chore.Text = "Chore"
-        Me.Chore.UseVisualStyleBackColor = True
-        '
-        'addTaskChoreBtn
-        '
-        Me.addTaskChoreBtn.Location = New System.Drawing.Point(171, 692)
-        Me.addTaskChoreBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.addTaskChoreBtn.Name = "addTaskChoreBtn"
-        Me.addTaskChoreBtn.Size = New System.Drawing.Size(290, 105)
-        Me.addTaskChoreBtn.TabIndex = 8
-        Me.addTaskChoreBtn.Text = "Add Task"
-        Me.addTaskChoreBtn.UseVisualStyleBackColor = True
-        '
-        'ChoreTitle
-        '
-        Me.ChoreTitle.AutoSize = True
-        Me.ChoreTitle.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.ChoreTitle.Location = New System.Drawing.Point(194, 22)
-        Me.ChoreTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.ChoreTitle.Name = "ChoreTitle"
-        Me.ChoreTitle.Size = New System.Drawing.Size(246, 40)
-        Me.ChoreTitle.TabIndex = 7
-        Me.ChoreTitle.Text = "Household Tasks"
-        '
-        'ChoreListScroll
-        '
-        Me.ChoreListScroll.Location = New System.Drawing.Point(589, 112)
-        Me.ChoreListScroll.Name = "ChoreListScroll"
-        Me.ChoreListScroll.Size = New System.Drawing.Size(21, 515)
-        Me.ChoreListScroll.TabIndex = 6
-        '
-        'ChoreListView
-        '
-        Me.ChoreListView.Activation = System.Windows.Forms.ItemActivation.OneClick
-        Me.ChoreListView.Alignment = System.Windows.Forms.ListViewAlignment.[Default]
-        Me.ChoreListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ChoreListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10})
-        Me.ChoreListView.GridLines = True
-        Me.ChoreListView.Location = New System.Drawing.Point(19, 112)
-        Me.ChoreListView.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.ChoreListView.Name = "ChoreListView"
-        Me.ChoreListView.Size = New System.Drawing.Size(565, 514)
-        Me.ChoreListView.TabIndex = 5
-        Me.ChoreListView.UseCompatibleStateImageBehavior = False
-        Me.ChoreListView.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Task"
-        Me.ColumnHeader6.Width = 65
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Description"
-        Me.ColumnHeader7.Width = 100
-        '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "Due Date"
-        Me.ColumnHeader8.Width = 75
-        '
-        'ColumnHeader9
-        '
-        Me.ColumnHeader9.Text = "Frequency"
-        Me.ColumnHeader9.Width = 80
-        '
-        'ColumnHeader10
-        '
-        Me.ColumnHeader10.Text = "Assigned To"
-        Me.ColumnHeader10.Width = 80
-        '
-        'Home
-        '
-        Me.Home.Controls.Add(Me.addTaskHomeScreenBtn)
-        Me.Home.Controls.Add(Me.roomatesTasksHomeScreenListView)
-        Me.Home.Controls.Add(Me.yourTasksHomeScreenListView)
-        Me.Home.Controls.Add(Me.roomateTaskslbl)
-        Me.Home.Controls.Add(Me.yourTaskslbl)
-        Me.Home.Location = New System.Drawing.Point(4, 4)
-        Me.Home.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Home.Name = "Home"
-        Me.Home.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Home.Size = New System.Drawing.Size(642, 904)
-        Me.Home.TabIndex = 1
-        Me.Home.Text = "Home"
-        Me.Home.UseVisualStyleBackColor = True
-        '
-        'addTaskHomeScreenBtn
-        '
-        Me.addTaskHomeScreenBtn.Location = New System.Drawing.Point(166, 725)
-        Me.addTaskHomeScreenBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.addTaskHomeScreenBtn.Name = "addTaskHomeScreenBtn"
-        Me.addTaskHomeScreenBtn.Size = New System.Drawing.Size(290, 105)
-        Me.addTaskHomeScreenBtn.TabIndex = 5
-        Me.addTaskHomeScreenBtn.Text = "Add Task"
-        Me.addTaskHomeScreenBtn.UseVisualStyleBackColor = True
-        '
-        'roomatesTasksHomeScreenListView
-        '
-        Me.roomatesTasksHomeScreenListView.Activation = System.Windows.Forms.ItemActivation.OneClick
-        Me.roomatesTasksHomeScreenListView.Alignment = System.Windows.Forms.ListViewAlignment.[Default]
-        Me.roomatesTasksHomeScreenListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
-        Me.roomatesTasksHomeScreenListView.GridLines = True
-        Me.roomatesTasksHomeScreenListView.Location = New System.Drawing.Point(9, 473)
-        Me.roomatesTasksHomeScreenListView.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.roomatesTasksHomeScreenListView.Name = "roomatesTasksHomeScreenListView"
-        Me.roomatesTasksHomeScreenListView.Size = New System.Drawing.Size(604, 222)
-        Me.roomatesTasksHomeScreenListView.TabIndex = 4
-        Me.roomatesTasksHomeScreenListView.UseCompatibleStateImageBehavior = False
-        Me.roomatesTasksHomeScreenListView.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Task"
-        Me.ColumnHeader1.Width = 70
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Description"
-        Me.ColumnHeader2.Width = 120
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Due Date"
-        Me.ColumnHeader3.Width = 90
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Frequency"
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Assigned To"
-        Me.ColumnHeader5.Width = 80
-        '
-        'yourTasksHomeScreenListView
-        '
-        Me.yourTasksHomeScreenListView.Activation = System.Windows.Forms.ItemActivation.OneClick
-        Me.yourTasksHomeScreenListView.Alignment = System.Windows.Forms.ListViewAlignment.[Default]
-        Me.yourTasksHomeScreenListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.taskName, Me.Description, Me.dueDate, Me.frequency, Me.assignedTo})
-        Me.yourTasksHomeScreenListView.GridLines = True
-        Me.yourTasksHomeScreenListView.Location = New System.Drawing.Point(9, 142)
-        Me.yourTasksHomeScreenListView.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.yourTasksHomeScreenListView.Name = "yourTasksHomeScreenListView"
-        Me.yourTasksHomeScreenListView.Size = New System.Drawing.Size(604, 222)
-        Me.yourTasksHomeScreenListView.TabIndex = 3
-        Me.yourTasksHomeScreenListView.UseCompatibleStateImageBehavior = False
-        Me.yourTasksHomeScreenListView.View = System.Windows.Forms.View.Details
-        '
-        'taskName
-        '
-        Me.taskName.Text = "Task"
-        Me.taskName.Width = 70
-        '
-        'Description
-        '
-        Me.Description.Text = "Description"
-        Me.Description.Width = 120
-        '
-        'dueDate
-        '
-        Me.dueDate.Text = "Due Date"
-        Me.dueDate.Width = 90
-        '
-        'frequency
-        '
-        Me.frequency.Text = "Frequency"
-        '
-        'assignedTo
-        '
-        Me.assignedTo.Text = "Assigned To"
-        Me.assignedTo.Width = 80
-        '
-        'roomateTaskslbl
-        '
-        Me.roomateTaskslbl.AutoSize = True
-        Me.roomateTaskslbl.Font = New System.Drawing.Font("Gadugi", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.roomateTaskslbl.Location = New System.Drawing.Point(23, 405)
-        Me.roomateTaskslbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.roomateTaskslbl.Name = "roomateTaskslbl"
-        Me.roomateTaskslbl.Size = New System.Drawing.Size(306, 43)
-        Me.roomateTaskslbl.TabIndex = 1
-        Me.roomateTaskslbl.Text = "Roomates's  Tasks"
-        '
-        'yourTaskslbl
-        '
-        Me.yourTaskslbl.AutoSize = True
-        Me.yourTaskslbl.Font = New System.Drawing.Font("Gadugi", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.yourTaskslbl.Location = New System.Drawing.Point(23, 65)
-        Me.yourTaskslbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.yourTaskslbl.Name = "yourTaskslbl"
-        Me.yourTaskslbl.Size = New System.Drawing.Size(188, 43)
-        Me.yourTaskslbl.TabIndex = 0
-        Me.yourTaskslbl.Text = "Your Tasks"
-        '
-        'Trade
-        '
-        Me.Trade.Controls.Add(Me.personTradeLabel)
-        Me.Trade.Controls.Add(Me.personComboBox)
-        Me.Trade.Controls.Add(Me.TradeBtn)
-        Me.Trade.Controls.Add(Me.mateTradeLabel)
-        Me.Trade.Controls.Add(Me.taskComboBox)
-        Me.Trade.Controls.Add(Me.selfTradeLabel)
-        Me.Trade.Controls.Add(Me.offerComboBox)
-        Me.Trade.Location = New System.Drawing.Point(4, 4)
-        Me.Trade.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Trade.Name = "Trade"
-        Me.Trade.Size = New System.Drawing.Size(642, 904)
-        Me.Trade.TabIndex = 3
-        Me.Trade.Text = "Trade"
-        Me.Trade.UseVisualStyleBackColor = True
-        '
-        'personTradeLabel
-        '
-        Me.personTradeLabel.AutoSize = True
-        Me.personTradeLabel.Location = New System.Drawing.Point(31, 183)
-        Me.personTradeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.personTradeLabel.Name = "personTradeLabel"
-        Me.personTradeLabel.Size = New System.Drawing.Size(211, 25)
-        Me.personTradeLabel.TabIndex = 6
-        Me.personTradeLabel.Text = "Roommate to Trade With"
-        '
-        'personComboBox
-        '
-        Me.personComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.personComboBox.FormattingEnabled = True
-        Me.personComboBox.Location = New System.Drawing.Point(31, 247)
-        Me.personComboBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.personComboBox.Name = "personComboBox"
-        Me.personComboBox.Size = New System.Drawing.Size(341, 33)
-        Me.personComboBox.TabIndex = 5
-        '
-        'TradeBtn
-        '
-        Me.TradeBtn.Location = New System.Drawing.Point(31, 563)
-        Me.TradeBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TradeBtn.Name = "TradeBtn"
-        Me.TradeBtn.Size = New System.Drawing.Size(234, 100)
-        Me.TradeBtn.TabIndex = 4
-        Me.TradeBtn.Text = "Ask for Trade"
-        Me.TradeBtn.UseVisualStyleBackColor = True
-        '
-        'mateTradeLabel
-        '
-        Me.mateTradeLabel.AutoSize = True
-        Me.mateTradeLabel.Location = New System.Drawing.Point(31, 347)
-        Me.mateTradeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.mateTradeLabel.Name = "mateTradeLabel"
-        Me.mateTradeLabel.Size = New System.Drawing.Size(158, 25)
-        Me.mateTradeLabel.TabIndex = 3
-        Me.mateTradeLabel.Text = "The Task You Want"
-        '
-        'taskComboBox
-        '
-        Me.taskComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.taskComboBox.FormattingEnabled = True
-        Me.taskComboBox.Location = New System.Drawing.Point(31, 410)
-        Me.taskComboBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.taskComboBox.Name = "taskComboBox"
-        Me.taskComboBox.Size = New System.Drawing.Size(341, 33)
-        Me.taskComboBox.TabIndex = 2
-        '
-        'selfTradeLabel
-        '
-        Me.selfTradeLabel.AutoSize = True
-        Me.selfTradeLabel.Location = New System.Drawing.Point(31, 37)
-        Me.selfTradeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.selfTradeLabel.Name = "selfTradeLabel"
-        Me.selfTradeLabel.Size = New System.Drawing.Size(153, 25)
-        Me.selfTradeLabel.TabIndex = 1
-        Me.selfTradeLabel.Text = "Your Task to Offer"
-        '
-        'offerComboBox
-        '
-        Me.offerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.offerComboBox.FormattingEnabled = True
-        Me.offerComboBox.Location = New System.Drawing.Point(31, 100)
-        Me.offerComboBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.offerComboBox.Name = "offerComboBox"
-        Me.offerComboBox.Size = New System.Drawing.Size(341, 33)
-        Me.offerComboBox.TabIndex = 0
-        '
-        'Performance
-        '
-        Me.Performance.Location = New System.Drawing.Point(4, 4)
-        Me.Performance.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Performance.Name = "Performance"
-        Me.Performance.Size = New System.Drawing.Size(642, 904)
-        Me.Performance.TabIndex = 4
-        Me.Performance.Text = "Performance"
-        Me.Performance.UseVisualStyleBackColor = True
-        '
-        'Form1
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(663, 1002)
-        Me.Controls.Add(Me.TabControl1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Name = "Form1"
-        Me.Text = "Roomies"
-        Me.TabControl1.ResumeLayout(False)
-        Me.Chore.ResumeLayout(False)
-        Me.Chore.PerformLayout()
-        Me.Home.ResumeLayout(False)
-        Me.Home.PerformLayout()
-        Me.Trade.ResumeLayout(False)
-        Me.Trade.PerformLayout()
-        Me.ResumeLayout(False)
-
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
+        TabControl1 = New TabControl()
+        Expense = New TabPage()
+        Chore = New TabPage()
+        ChoreHistory = New ChoreHistory()
+        addTaskChoreBtn = New Button()
+        ChoreTitle = New Label()
+        ChoreListScroll = New VScrollBar()
+        ChoreListView = New ListView()
+        ColumnHeader6 = New ColumnHeader()
+        ColumnHeader7 = New ColumnHeader()
+        ColumnHeader8 = New ColumnHeader()
+        ColumnHeader9 = New ColumnHeader()
+        ColumnHeader10 = New ColumnHeader()
+        ChoreCompletionHistoryBtn = New Button()
+        Home = New TabPage()
+        addTaskHomeScreenBtn = New Button()
+        roomatesTasksHomeScreenListView = New ListView()
+        ColumnHeader1 = New ColumnHeader()
+        ColumnHeader2 = New ColumnHeader()
+        ColumnHeader3 = New ColumnHeader()
+        ColumnHeader4 = New ColumnHeader()
+        ColumnHeader5 = New ColumnHeader()
+        yourTasksHomeScreenListView = New ListView()
+        taskName = New ColumnHeader()
+        Description = New ColumnHeader()
+        dueDate = New ColumnHeader()
+        frequency = New ColumnHeader()
+        assignedTo = New ColumnHeader()
+        roomateTaskslbl = New Label()
+        yourTaskslbl = New Label()
+        Trade = New TabPage()
+        personTradeLabel = New Label()
+        personComboBox = New ComboBox()
+        TradeBtn = New Button()
+        mateTradeLabel = New Label()
+        taskComboBox = New ComboBox()
+        selfTradeLabel = New Label()
+        offerComboBox = New ComboBox()
+        TabControl1.SuspendLayout()
+        Chore.SuspendLayout()
+        Home.SuspendLayout()
+        Trade.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' TabControl1
+        ' 
+        TabControl1.Alignment = TabAlignment.Bottom
+        TabControl1.Controls.Add(Expense)
+        TabControl1.Controls.Add(Chore)
+        TabControl1.Controls.Add(Home)
+        TabControl1.Controls.Add(Trade)
+        TabControl1.ItemSize = New Size(113, 50)
+        TabControl1.Location = New Point(7, 12)
+        TabControl1.Name = "TabControl1"
+        TabControl1.SelectedIndex = 0
+        TabControl1.Size = New Size(455, 577)
+        TabControl1.SizeMode = TabSizeMode.Fixed
+        TabControl1.TabIndex = 0
+        ' 
+        ' Expense
+        ' 
+        Expense.Location = New Point(4, 4)
+        Expense.Name = "Expense"
+        Expense.Padding = New Padding(3)
+        Expense.Size = New Size(447, 519)
+        Expense.TabIndex = 0
+        Expense.Text = "Expense"
+        Expense.UseVisualStyleBackColor = True
+        ' 
+        ' Chore
+        ' 
+        Chore.Controls.Add(ChoreHistory)
+        Chore.Controls.Add(addTaskChoreBtn)
+        Chore.Controls.Add(ChoreTitle)
+        Chore.Controls.Add(ChoreListScroll)
+        Chore.Controls.Add(ChoreListView)
+        Chore.Controls.Add(ChoreCompletionHistoryBtn)
+        Chore.Location = New Point(4, 4)
+        Chore.Name = "Chore"
+        Chore.Size = New Size(447, 519)
+        Chore.TabIndex = 2
+        Chore.Text = "Chore"
+        Chore.UseVisualStyleBackColor = True
+        ' 
+        ' ChoreHistory
+        ' 
+        ChoreHistory.Location = New Point(0, 0)
+        ChoreHistory.Name = "ChoreHistory"
+        ChoreHistory.Size = New Size(447, 519)
+        ChoreHistory.TabIndex = 1
+        ChoreHistory.Visible = False
+        ' 
+        ' addTaskChoreBtn
+        ' 
+        addTaskChoreBtn.Location = New Point(120, 415)
+        addTaskChoreBtn.Name = "addTaskChoreBtn"
+        addTaskChoreBtn.Size = New Size(203, 63)
+        addTaskChoreBtn.TabIndex = 8
+        addTaskChoreBtn.Text = "Add Task"
+        addTaskChoreBtn.UseVisualStyleBackColor = True
+        ' 
+        ' ChoreTitle
+        ' 
+        ChoreTitle.AutoSize = True
+        ChoreTitle.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
+        ChoreTitle.Location = New Point(136, 13)
+        ChoreTitle.Name = "ChoreTitle"
+        ChoreTitle.Size = New Size(160, 25)
+        ChoreTitle.TabIndex = 7
+        ChoreTitle.Text = "Household Tasks"
+        ' 
+        ' ChoreListScroll
+        ' 
+        ChoreListScroll.Location = New Point(412, 67)
+        ChoreListScroll.Name = "ChoreListScroll"
+        ChoreListScroll.Size = New Size(21, 309)
+        ChoreListScroll.TabIndex = 6
+        ' 
+        ' ChoreListView
+        ' 
+        ChoreListView.Activation = ItemActivation.OneClick
+        ChoreListView.Alignment = ListViewAlignment.Default
+        ChoreListView.BorderStyle = BorderStyle.FixedSingle
+        ChoreListView.Columns.AddRange(New ColumnHeader() {ColumnHeader6, ColumnHeader7, ColumnHeader8, ColumnHeader9, ColumnHeader10})
+        ChoreListView.GridLines = True
+        ChoreListView.Location = New Point(13, 67)
+        ChoreListView.Name = "ChoreListView"
+        ChoreListView.Size = New Size(396, 309)
+        ChoreListView.TabIndex = 5
+        ChoreListView.UseCompatibleStateImageBehavior = False
+        ChoreListView.View = View.Details
+        ' 
+        ' ColumnHeader6
+        ' 
+        ColumnHeader6.Text = "Task"
+        ColumnHeader6.Width = 65
+        ' 
+        ' ColumnHeader7
+        ' 
+        ColumnHeader7.Text = "Description"
+        ColumnHeader7.Width = 100
+        ' 
+        ' ColumnHeader8
+        ' 
+        ColumnHeader8.Text = "Due Date"
+        ColumnHeader8.Width = 75
+        ' 
+        ' ColumnHeader9
+        ' 
+        ColumnHeader9.Text = "Frequency"
+        ColumnHeader9.Width = 80
+        ' 
+        ' ColumnHeader10
+        ' 
+        ColumnHeader10.Text = "Assigned To"
+        ColumnHeader10.Width = 80
+        ' 
+        ' ChoreCompletionHistoryBtn
+        ' 
+        ChoreCompletionHistoryBtn.Location = New Point(8, 422)
+        ChoreCompletionHistoryBtn.Name = "ChoreCompletionHistoryBtn"
+        ChoreCompletionHistoryBtn.Size = New Size(106, 50)
+        ChoreCompletionHistoryBtn.TabIndex = 0
+        ChoreCompletionHistoryBtn.Text = "History"
+        ChoreCompletionHistoryBtn.UseVisualStyleBackColor = True
+        ' 
+        ' Home
+        ' 
+        Home.Controls.Add(addTaskHomeScreenBtn)
+        Home.Controls.Add(roomatesTasksHomeScreenListView)
+        Home.Controls.Add(yourTasksHomeScreenListView)
+        Home.Controls.Add(roomateTaskslbl)
+        Home.Controls.Add(yourTaskslbl)
+        Home.Location = New Point(4, 4)
+        Home.Name = "Home"
+        Home.Padding = New Padding(3)
+        Home.Size = New Size(447, 519)
+        Home.TabIndex = 1
+        Home.Text = "Home"
+        Home.UseVisualStyleBackColor = True
+        ' 
+        ' addTaskHomeScreenBtn
+        ' 
+        addTaskHomeScreenBtn.Location = New Point(116, 435)
+        addTaskHomeScreenBtn.Name = "addTaskHomeScreenBtn"
+        addTaskHomeScreenBtn.Size = New Size(203, 63)
+        addTaskHomeScreenBtn.TabIndex = 5
+        addTaskHomeScreenBtn.Text = "Add Task"
+        addTaskHomeScreenBtn.UseVisualStyleBackColor = True
+        ' 
+        ' roomatesTasksHomeScreenListView
+        ' 
+        roomatesTasksHomeScreenListView.Activation = ItemActivation.OneClick
+        roomatesTasksHomeScreenListView.Alignment = ListViewAlignment.Default
+        roomatesTasksHomeScreenListView.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader3, ColumnHeader4, ColumnHeader5})
+        roomatesTasksHomeScreenListView.GridLines = True
+        roomatesTasksHomeScreenListView.Location = New Point(6, 284)
+        roomatesTasksHomeScreenListView.Name = "roomatesTasksHomeScreenListView"
+        roomatesTasksHomeScreenListView.Size = New Size(424, 135)
+        roomatesTasksHomeScreenListView.TabIndex = 4
+        roomatesTasksHomeScreenListView.UseCompatibleStateImageBehavior = False
+        roomatesTasksHomeScreenListView.View = View.Details
+        ' 
+        ' ColumnHeader1
+        ' 
+        ColumnHeader1.Text = "Task"
+        ColumnHeader1.Width = 70
+        ' 
+        ' ColumnHeader2
+        ' 
+        ColumnHeader2.Text = "Description"
+        ColumnHeader2.Width = 120
+        ' 
+        ' ColumnHeader3
+        ' 
+        ColumnHeader3.Text = "Due Date"
+        ColumnHeader3.Width = 90
+        ' 
+        ' ColumnHeader4
+        ' 
+        ColumnHeader4.Text = "Frequency"
+        ' 
+        ' ColumnHeader5
+        ' 
+        ColumnHeader5.Text = "Assigned To"
+        ColumnHeader5.Width = 80
+        ' 
+        ' yourTasksHomeScreenListView
+        ' 
+        yourTasksHomeScreenListView.Activation = ItemActivation.OneClick
+        yourTasksHomeScreenListView.Alignment = ListViewAlignment.Default
+        yourTasksHomeScreenListView.Columns.AddRange(New ColumnHeader() {taskName, Description, dueDate, frequency, assignedTo})
+        yourTasksHomeScreenListView.GridLines = True
+        yourTasksHomeScreenListView.Location = New Point(6, 85)
+        yourTasksHomeScreenListView.Name = "yourTasksHomeScreenListView"
+        yourTasksHomeScreenListView.Size = New Size(424, 135)
+        yourTasksHomeScreenListView.TabIndex = 3
+        yourTasksHomeScreenListView.UseCompatibleStateImageBehavior = False
+        yourTasksHomeScreenListView.View = View.Details
+        ' 
+        ' taskName
+        ' 
+        taskName.Text = "Task"
+        taskName.Width = 70
+        ' 
+        ' Description
+        ' 
+        Description.Text = "Description"
+        Description.Width = 120
+        ' 
+        ' dueDate
+        ' 
+        dueDate.Text = "Due Date"
+        dueDate.Width = 90
+        ' 
+        ' frequency
+        ' 
+        frequency.Text = "Frequency"
+        ' 
+        ' assignedTo
+        ' 
+        assignedTo.Text = "Assigned To"
+        assignedTo.Width = 80
+        ' 
+        ' roomateTaskslbl
+        ' 
+        roomateTaskslbl.AutoSize = True
+        roomateTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        roomateTaskslbl.Location = New Point(16, 243)
+        roomateTaskslbl.Name = "roomateTaskslbl"
+        roomateTaskslbl.Size = New Size(205, 28)
+        roomateTaskslbl.TabIndex = 1
+        roomateTaskslbl.Text = "Roomates's  Tasks"
+        ' 
+        ' yourTaskslbl
+        ' 
+        yourTaskslbl.AutoSize = True
+        yourTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTaskslbl.Location = New Point(16, 39)
+        yourTaskslbl.Name = "yourTaskslbl"
+        yourTaskslbl.Size = New Size(125, 28)
+        yourTaskslbl.TabIndex = 0
+        yourTaskslbl.Text = "Your Tasks"
+        ' 
+        ' Trade
+        ' 
+        Trade.Controls.Add(personTradeLabel)
+        Trade.Controls.Add(personComboBox)
+        Trade.Controls.Add(TradeBtn)
+        Trade.Controls.Add(mateTradeLabel)
+        Trade.Controls.Add(taskComboBox)
+        Trade.Controls.Add(selfTradeLabel)
+        Trade.Controls.Add(offerComboBox)
+        Trade.Location = New Point(4, 4)
+        Trade.Name = "Trade"
+        Trade.Size = New Size(447, 519)
+        Trade.TabIndex = 3
+        Trade.Text = "Trade"
+        Trade.UseVisualStyleBackColor = True
+        ' 
+        ' personTradeLabel
+        ' 
+        personTradeLabel.AutoSize = True
+        personTradeLabel.Location = New Point(22, 110)
+        personTradeLabel.Name = "personTradeLabel"
+        personTradeLabel.Size = New Size(139, 15)
+        personTradeLabel.TabIndex = 6
+        personTradeLabel.Text = "Roommate to Trade With"
+        ' 
+        ' personComboBox
+        ' 
+        personComboBox.FormattingEnabled = True
+        personComboBox.Location = New Point(22, 148)
+        personComboBox.Name = "personComboBox"
+        personComboBox.Size = New Size(240, 23)
+        personComboBox.TabIndex = 5
+        ' 
+        ' TradeBtn
+        ' 
+        TradeBtn.Location = New Point(22, 338)
+        TradeBtn.Name = "TradeBtn"
+        TradeBtn.Size = New Size(164, 60)
+        TradeBtn.TabIndex = 4
+        TradeBtn.Text = "Ask for Trade"
+        TradeBtn.UseVisualStyleBackColor = True
+        ' 
+        ' mateTradeLabel
+        ' 
+        mateTradeLabel.AutoSize = True
+        mateTradeLabel.Location = New Point(22, 208)
+        mateTradeLabel.Name = "mateTradeLabel"
+        mateTradeLabel.Size = New Size(105, 15)
+        mateTradeLabel.TabIndex = 3
+        mateTradeLabel.Text = "The Task You Want"
+        ' 
+        ' taskComboBox
+        ' 
+        taskComboBox.FormattingEnabled = True
+        taskComboBox.Location = New Point(22, 246)
+        taskComboBox.Name = "taskComboBox"
+        taskComboBox.Size = New Size(240, 23)
+        taskComboBox.TabIndex = 2
+        ' 
+        ' selfTradeLabel
+        ' 
+        selfTradeLabel.AutoSize = True
+        selfTradeLabel.Location = New Point(22, 22)
+        selfTradeLabel.Name = "selfTradeLabel"
+        selfTradeLabel.Size = New Size(100, 15)
+        selfTradeLabel.TabIndex = 1
+        selfTradeLabel.Text = "Your Task to Offer"
+        ' 
+        ' offerComboBox
+        ' 
+        offerComboBox.FormattingEnabled = True
+        offerComboBox.Location = New Point(22, 60)
+        offerComboBox.Name = "offerComboBox"
+        offerComboBox.Size = New Size(240, 23)
+        offerComboBox.TabIndex = 0
+        ' 
+        ' Form1
+        ' 
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(464, 601)
+        Controls.Add(TabControl1)
+        Name = "Form1"
+        Text = "Roomies"
+        TabControl1.ResumeLayout(False)
+        Chore.ResumeLayout(False)
+        Chore.PerformLayout()
+        Home.ResumeLayout(False)
+        Home.PerformLayout()
+        Trade.ResumeLayout(False)
+        Trade.PerformLayout()
+        ResumeLayout(False)
     End Sub
 
     Friend WithEvents TabControl1 As TabControl
@@ -421,7 +406,6 @@ Partial Class Form1
     Friend WithEvents Home As TabPage
     Friend WithEvents Chore As TabPage
     Friend WithEvents Trade As TabPage
-    Friend WithEvents Performance As TabPage
     Friend WithEvents roomateTaskslbl As Label
     Friend WithEvents yourTaskslbl As Label
     Friend WithEvents yourTasksHomeScreenListView As ListView
@@ -456,4 +440,7 @@ Partial Class Form1
     Friend WithEvents TradeBtn As Button
     Friend WithEvents personTradeLabel As Label
     Friend WithEvents personComboBox As ComboBox
+    Friend WithEvents ChoreCompletionHistoryBtn As Button
+    Friend WithEvents ChoreHistory As ChoreHistory
+
 End Class
