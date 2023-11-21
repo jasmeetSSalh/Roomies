@@ -31,4 +31,12 @@ Public Class ChoreHistory
             Me.HistoryList.Items.Add(item)
         Next
     End Sub
+
+    Private Sub BalanceSheetBackBtn_MouseEnter(sender As Object, e As EventArgs) Handles BackBtn.MouseEnter
+        Me.Cursor = Cursors.Hand
+    End Sub
+
+    Private Sub BalanceSheetBackBtn_MouseLeave(sender As Object, e As EventArgs) Handles BackBtn.MouseLeave
+        Me.Cursor = Cursors.Default
+    End Sub
 End Class

@@ -296,8 +296,6 @@ Public Class Form1
     End Sub
 
 
-    End Sub
-
     ' creating a Enter handler for homepage to automatically update lists to any changes on other tabs
     Private Sub Home_Enter(sender As Object, e As EventArgs) Handles Home.Enter
         ClearHomeScreen()

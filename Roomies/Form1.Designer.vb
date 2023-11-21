@@ -26,7 +26,7 @@ Partial Class Form1
         TabControl1 = New TabControl()
         Expense = New TabPage()
         Chore = New TabPage()
-
+        ChoreHistory = New ChoreHistory()
         addTaskChoreBtn = New Button()
         ChoreTitle = New Label()
         ChoreListScroll = New VScrollBar()
@@ -36,10 +36,7 @@ Partial Class Form1
         ColumnHeader8 = New ColumnHeader()
         ColumnHeader9 = New ColumnHeader()
         ColumnHeader10 = New ColumnHeader()
-
         ChoreCompletionHistoryBtn = New Button()
-        ChoreHistory = New ChoreHistory()
-
         Home = New TabPage()
         addTaskHomeScreenBtn = New Button()
         roomatesTasksHomeScreenListView = New ListView()
@@ -57,7 +54,6 @@ Partial Class Form1
         roomateTaskslbl = New Label()
         yourTaskslbl = New Label()
         Trade = New TabPage()
-
         personTradeLabel = New Label()
         personComboBox = New ComboBox()
         TradeBtn = New Button()
@@ -65,8 +61,6 @@ Partial Class Form1
         taskComboBox = New ComboBox()
         selfTradeLabel = New Label()
         offerComboBox = New ComboBox()
-        Performance = New TabPage()
-
         TabControl1.SuspendLayout()
         Chore.SuspendLayout()
         Home.SuspendLayout()
@@ -100,15 +94,12 @@ Partial Class Form1
         ' 
         ' Chore
         ' 
-
+        Chore.Controls.Add(ChoreHistory)
         Chore.Controls.Add(addTaskChoreBtn)
         Chore.Controls.Add(ChoreTitle)
         Chore.Controls.Add(ChoreListScroll)
         Chore.Controls.Add(ChoreListView)
-
-        Chore.Controls.Add(ChoreHistory)
         Chore.Controls.Add(ChoreCompletionHistoryBtn)
-
         Chore.Location = New Point(4, 4)
         Chore.Name = "Chore"
         Chore.Size = New Size(447, 519)
@@ -116,7 +107,14 @@ Partial Class Form1
         Chore.Text = "Chore"
         Chore.UseVisualStyleBackColor = True
         ' 
-
+        ' ChoreHistory
+        ' 
+        ChoreHistory.Location = New Point(0, 0)
+        ChoreHistory.Name = "ChoreHistory"
+        ChoreHistory.Size = New Size(447, 519)
+        ChoreHistory.TabIndex = 1
+        ChoreHistory.Visible = False
+        ' 
         ' addTaskChoreBtn
         ' 
         addTaskChoreBtn.Location = New Point(120, 415)
@@ -134,7 +132,8 @@ Partial Class Form1
         ChoreTitle.Name = "ChoreTitle"
         ChoreTitle.Size = New Size(160, 25)
         ChoreTitle.TabIndex = 7
-        ChoreTitle.Text = "Household Tasks"' 
+        ChoreTitle.Text = "Household Tasks"
+        ' 
         ' ChoreListScroll
         ' 
         ChoreListScroll.Location = New Point(412, 67)
@@ -180,24 +179,15 @@ Partial Class Form1
         ' 
         ColumnHeader10.Text = "Assigned To"
         ColumnHeader10.Width = 80
-
+        ' 
         ' ChoreCompletionHistoryBtn
         ' 
-        ChoreCompletionHistoryBtn.Location = New Point(17, 449)
+        ChoreCompletionHistoryBtn.Location = New Point(8, 422)
         ChoreCompletionHistoryBtn.Name = "ChoreCompletionHistoryBtn"
         ChoreCompletionHistoryBtn.Size = New Size(106, 50)
         ChoreCompletionHistoryBtn.TabIndex = 0
         ChoreCompletionHistoryBtn.Text = "History"
         ChoreCompletionHistoryBtn.UseVisualStyleBackColor = True
-        ' 
-        ' ChoreHistory
-        ' 
-        ChoreHistory.Location = New Point(0, 0)
-        ChoreHistory.Name = "ChoreHistory"
-        ChoreHistory.Size = New Size(447, 519)
-        ChoreHistory.TabIndex = 1
-        ChoreHistory.Visible = False
-
         ' 
         ' Home
         ' 
@@ -253,7 +243,8 @@ Partial Class Form1
         ' 
         ' ColumnHeader4
         ' 
-        ColumnHeader4.Text = "Frequency"' 
+        ColumnHeader4.Text = "Frequency"
+        ' 
         ' ColumnHeader5
         ' 
         ColumnHeader5.Text = "Assigned To"
@@ -289,7 +280,8 @@ Partial Class Form1
         ' 
         ' frequency
         ' 
-        frequency.Text = "Frequency"' 
+        frequency.Text = "Frequency"
+        ' 
         ' assignedTo
         ' 
         assignedTo.Text = "Assigned To"
@@ -298,21 +290,23 @@ Partial Class Form1
         ' roomateTaskslbl
         ' 
         roomateTaskslbl.AutoSize = True
-        roomateTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        roomateTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
         roomateTaskslbl.Location = New Point(16, 243)
         roomateTaskslbl.Name = "roomateTaskslbl"
         roomateTaskslbl.Size = New Size(205, 28)
         roomateTaskslbl.TabIndex = 1
-        roomateTaskslbl.Text = "Roomates's  Tasks"' 
+        roomateTaskslbl.Text = "Roomates's  Tasks"
+        ' 
         ' yourTaskslbl
         ' 
         yourTaskslbl.AutoSize = True
-        yourTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
         yourTaskslbl.Location = New Point(16, 39)
         yourTaskslbl.Name = "yourTaskslbl"
         yourTaskslbl.Size = New Size(125, 28)
         yourTaskslbl.TabIndex = 0
-        yourTaskslbl.Text = "Your Tasks"' 
+        yourTaskslbl.Text = "Your Tasks"
+        ' 
         ' Trade
         ' 
         Trade.Controls.Add(personTradeLabel)
@@ -336,7 +330,8 @@ Partial Class Form1
         personTradeLabel.Name = "personTradeLabel"
         personTradeLabel.Size = New Size(139, 15)
         personTradeLabel.TabIndex = 6
-        personTradeLabel.Text = "Roommate to Trade With"' 
+        personTradeLabel.Text = "Roommate to Trade With"
+        ' 
         ' personComboBox
         ' 
         personComboBox.FormattingEnabled = True
@@ -361,7 +356,8 @@ Partial Class Form1
         mateTradeLabel.Name = "mateTradeLabel"
         mateTradeLabel.Size = New Size(105, 15)
         mateTradeLabel.TabIndex = 3
-        mateTradeLabel.Text = "The Task You Want"' 
+        mateTradeLabel.Text = "The Task You Want"
+        ' 
         ' taskComboBox
         ' 
         taskComboBox.FormattingEnabled = True
@@ -377,7 +373,8 @@ Partial Class Form1
         selfTradeLabel.Name = "selfTradeLabel"
         selfTradeLabel.Size = New Size(100, 15)
         selfTradeLabel.TabIndex = 1
-        selfTradeLabel.Text = "Your Task to Offer"' 
+        selfTradeLabel.Text = "Your Task to Offer"
+        ' 
         ' offerComboBox
         ' 
         offerComboBox.FormattingEnabled = True
@@ -386,18 +383,9 @@ Partial Class Form1
         offerComboBox.Size = New Size(240, 23)
         offerComboBox.TabIndex = 0
         ' 
-        ' Performance
-        ' 
-        Performance.Location = New Point(4, 4)
-        Performance.Name = "Performance"
-        Performance.Size = New Size(447, 519)
-        Performance.TabIndex = 4
-        Performance.Text = "Performance"
-        Performance.UseVisualStyleBackColor = True
-        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(464, 601)
         Controls.Add(TabControl1)
@@ -405,9 +393,7 @@ Partial Class Form1
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
         Chore.ResumeLayout(False)
-
         Chore.PerformLayout()
-
         Home.ResumeLayout(False)
         Home.PerformLayout()
         Trade.ResumeLayout(False)
