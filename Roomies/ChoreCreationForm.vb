@@ -47,7 +47,14 @@ Public Class ChoreCreationForm
 
     Private Sub Okbtn_Click(sender As Object, e As EventArgs) Handles okbtn.Click
         Dim task As Task = CreateTask()
-        _mainForm.AddTask(task)
+
+        If voluteerRadiobtn.Checked Then
+            _mainForm.AddTaskSelf(task)
+
+        Else
+            _mainForm.DistributeTask(task)
+        End If
+
         Me.DialogResult = DialogResult.OK ' Set DialogResult
         Me.Close()
     End Sub
