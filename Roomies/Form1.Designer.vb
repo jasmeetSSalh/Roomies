@@ -25,6 +25,17 @@ Partial Class Form1
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         Expense = New TabPage()
+        AddExpenseForm = New AddExpense()
+        BalanceSheet1 = New BalanceSheet()
+        expenseAddedSuccess = New Label()
+        addExpenseButton = New Button()
+        ViewBalanceSheet = New Button()
+        yourTotalAmount = New Label()
+        yourTotalLabel = New Label()
+        yourExpenseList = New ListView()
+        yourExpenseItemColumn = New ColumnHeader()
+        yourExpenseCostColumn = New ColumnHeader()
+        yourExpenseLabel = New Label()
         Chore = New TabPage()
         ChoreHistory = New ChoreHistory()
         addTaskChoreBtn = New Button()
@@ -62,6 +73,7 @@ Partial Class Form1
         selfTradeLabel = New Label()
         offerComboBox = New ComboBox()
         TabControl1.SuspendLayout()
+        Expense.SuspendLayout()
         Chore.SuspendLayout()
         Home.SuspendLayout()
         Trade.SuspendLayout()
@@ -84,6 +96,15 @@ Partial Class Form1
         ' 
         ' Expense
         ' 
+        Expense.Controls.Add(AddExpenseForm)
+        Expense.Controls.Add(BalanceSheet1)
+        Expense.Controls.Add(expenseAddedSuccess)
+        Expense.Controls.Add(addExpenseButton)
+        Expense.Controls.Add(ViewBalanceSheet)
+        Expense.Controls.Add(yourTotalAmount)
+        Expense.Controls.Add(yourTotalLabel)
+        Expense.Controls.Add(yourExpenseList)
+        Expense.Controls.Add(yourExpenseLabel)
         Expense.Location = New Point(4, 4)
         Expense.Name = "Expense"
         Expense.Padding = New Padding(3)
@@ -91,6 +112,109 @@ Partial Class Form1
         Expense.TabIndex = 0
         Expense.Text = "Expense"
         Expense.UseVisualStyleBackColor = True
+        ' 
+        ' AddExpenseForm
+        ' 
+        AddExpenseForm.Location = New Point(-12, -15)
+        AddExpenseForm.Name = "AddExpenseForm"
+        AddExpenseForm.Size = New Size(463, 908)
+        AddExpenseForm.TabIndex = 11
+        AddExpenseForm.Visible = False
+        ' 
+        ' BalanceSheet1
+        ' 
+        BalanceSheet1.Location = New Point(0, -1)
+        BalanceSheet1.Margin = New Padding(5, 6, 5, 6)
+        BalanceSheet1.Name = "BalanceSheet1"
+        BalanceSheet1.Size = New Size(447, 519)
+        BalanceSheet1.TabIndex = 9
+        BalanceSheet1.Visible = False
+        ' 
+        ' expenseAddedSuccess
+        ' 
+        expenseAddedSuccess.AutoSize = True
+        expenseAddedSuccess.Font = New Font("Gadugi", 9.857143F, FontStyle.Regular, GraphicsUnit.Point)
+        expenseAddedSuccess.ForeColor = Color.Green
+        expenseAddedSuccess.Location = New Point(10, 403)
+        expenseAddedSuccess.Name = "expenseAddedSuccess"
+        expenseAddedSuccess.Size = New Size(246, 17)
+        expenseAddedSuccess.TabIndex = 21
+        expenseAddedSuccess.Text = "A new expense was successfully added!"
+        expenseAddedSuccess.Visible = False
+        ' 
+        ' addExpenseButton
+        ' 
+        addExpenseButton.Font = New Font("Gadugi", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        addExpenseButton.Location = New Point(306, 373)
+        addExpenseButton.Name = "addExpenseButton"
+        addExpenseButton.Size = New Size(126, 26)
+        addExpenseButton.TabIndex = 10
+        addExpenseButton.Text = "Add Expense"
+        addExpenseButton.UseVisualStyleBackColor = True
+        ' 
+        ' ViewBalanceSheet
+        ' 
+        ViewBalanceSheet.Font = New Font("Gadugi", 15.8571434F, FontStyle.Bold, GraphicsUnit.Point)
+        ViewBalanceSheet.Location = New Point(10, 420)
+        ViewBalanceSheet.Name = "ViewBalanceSheet"
+        ViewBalanceSheet.Size = New Size(422, 47)
+        ViewBalanceSheet.TabIndex = 8
+        ViewBalanceSheet.Text = "Household Balance Sheet"
+        ViewBalanceSheet.UseVisualStyleBackColor = True
+        ' 
+        ' yourTotalAmount
+        ' 
+        yourTotalAmount.AutoSize = True
+        yourTotalAmount.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTotalAmount.Location = New Point(140, 373)
+        yourTotalAmount.Name = "yourTotalAmount"
+        yourTotalAmount.Size = New Size(69, 28)
+        yourTotalAmount.TabIndex = 7
+        yourTotalAmount.Text = "$0.00"
+        ' 
+        ' yourTotalLabel
+        ' 
+        yourTotalLabel.AutoSize = True
+        yourTotalLabel.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTotalLabel.Location = New Point(10, 373)
+        yourTotalLabel.Name = "yourTotalLabel"
+        yourTotalLabel.Size = New Size(126, 28)
+        yourTotalLabel.TabIndex = 6
+        yourTotalLabel.Text = "Your Total:"
+        ' 
+        ' yourExpenseList
+        ' 
+        yourExpenseList.Activation = ItemActivation.OneClick
+        yourExpenseList.Alignment = ListViewAlignment.Default
+        yourExpenseList.Columns.AddRange(New ColumnHeader() {yourExpenseItemColumn, yourExpenseCostColumn})
+        yourExpenseList.GridLines = True
+        yourExpenseList.LabelEdit = True
+        yourExpenseList.Location = New Point(10, 67)
+        yourExpenseList.Name = "yourExpenseList"
+        yourExpenseList.Size = New Size(424, 295)
+        yourExpenseList.TabIndex = 5
+        yourExpenseList.UseCompatibleStateImageBehavior = False
+        yourExpenseList.View = View.Details
+        ' 
+        ' yourExpenseItemColumn
+        ' 
+        yourExpenseItemColumn.Text = "Item"
+        yourExpenseItemColumn.Width = 300
+        ' 
+        ' yourExpenseCostColumn
+        ' 
+        yourExpenseCostColumn.Text = "Cost ($)"
+        yourExpenseCostColumn.Width = 120
+        ' 
+        ' yourExpenseLabel
+        ' 
+        yourExpenseLabel.AutoSize = True
+        yourExpenseLabel.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourExpenseLabel.Location = New Point(10, 29)
+        yourExpenseLabel.Name = "yourExpenseLabel"
+        yourExpenseLabel.Size = New Size(165, 28)
+        yourExpenseLabel.TabIndex = 4
+        yourExpenseLabel.Text = "Your Expenses"
         ' 
         ' Chore
         ' 
@@ -392,6 +516,8 @@ Partial Class Form1
         Name = "Form1"
         Text = "Roomies"
         TabControl1.ResumeLayout(False)
+        Expense.ResumeLayout(False)
+        Expense.PerformLayout()
         Chore.ResumeLayout(False)
         Chore.PerformLayout()
         Home.ResumeLayout(False)
@@ -421,6 +547,17 @@ Partial Class Form1
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents yourTotalAmount As Label
+    Friend WithEvents yourTotalLabel As Label
+    Friend WithEvents yourExpenseList As ListView
+    Friend WithEvents yourExpenseItemColumn As ColumnHeader
+    Friend WithEvents yourExpenseCostColumn As ColumnHeader
+    Friend WithEvents yourExpenseLabel As Label
+    Friend WithEvents ViewBalanceSheet As Button
+    Friend WithEvents BalanceSheet1 As BalanceSheet
+    Friend WithEvents addExpenseButton As Button
+    Friend WithEvents AddExpenseForm As AddExpense
+    Friend WithEvents expenseAddedSuccess As Label
     Friend WithEvents addTaskChoreBtn As Button
     Friend WithEvents ChoreTitle As Label
     Friend WithEvents ChoreListScroll As VScrollBar

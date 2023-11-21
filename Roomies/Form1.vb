@@ -1,6 +1,7 @@
-﻿Public Class Form1
+Public Class Form1
     Private completedChores As New List(Of CompletedChores)
-
+    Public expenses As New BindingList(Of Expense)()
+  
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Test data for testing the PopulateListView function
         ''''''''''''''''''''''''''''''''''''''''''''' TEST
@@ -28,6 +29,13 @@
 
         completedChores.Add(completedChore1)
         completedChores.Add(completedChore2)
+
+        expenses.Add(New Expense With {.Name = "Groceries", .Amount = 100D, .DateAdded = DateTime.Now, .Participants = New List(Of String)({"Andrew", "Nahid"})})
+        expenses.Add(New Expense With {.Name = "Electricity Bill", .Amount = 60D, .DateAdded = DateTime.Now.AddDays(-10), .Participants = New List(Of String)({"Andrew", "Nahid"})})
+
+        BalanceSheet1.DataGridView1.DataSource = expenses
+        DisplayYourExpense()
+        UpdateTotalAmount()
     End Sub
 
     ' Task Definition
@@ -243,6 +251,54 @@
         End If
     End Sub
 
+    'xxxxxxxxxxxxxxxxxxxxxxx______EXPENSE PAGE CODE______xxxxxxxxxxxxxxxxxxxxxxxxxx
+    Private Sub DisplayYourExpense()
+        For Each item As Expense In expenses
+            If item.Participants.Contains("Andrew") Then
+                If item.Participants.Count = 1 Then
+                    Dim listItem As New ListViewItem(item.Name)
+                    listItem.SubItems.Add(item.Amount.ToString("N2"))
+                    yourExpenseList.Items.Add(listItem)
+                Else
+                    Dim listItem As New ListViewItem(item.Name)
+                    listItem.SubItems.Add((item.Amount / 2).ToString("N2"))
+                    yourExpenseList.Items.Add(listItem)
+                End If
+            End If
+
+        Next
+    End Sub
+    Public Sub UpdateTotalAmount()
+        Dim totalAmount As Decimal = 0
+
+        For Each item As ListViewItem In yourExpenseList.Items
+            Dim costValue As Decimal
+
+            If Decimal.TryParse(item.SubItems(1).Text.TrimStart("$"c), costValue) Then
+                totalAmount += costValue
+            End If
+        Next
+
+        yourTotalAmount.Text = $"{totalAmount:C}"
+    End Sub
+    Private Sub ViewBalanceSheet_Click(sender As Object, e As EventArgs) Handles ViewBalanceSheet.Click
+        BalanceSheet1.Show()
+        expenseAddedSuccess.Hide()
+    End Sub
+
+    Private Sub BalanceSheet1_Load(sender As Object, e As EventArgs) Handles BalanceSheet1.Load
+        Dim total As Decimal = 0
+        For Each item In expenses
+            total += item.Amount
+        Next
+
+        BalanceSheet1.householdTotalAmount.Text = "$" + total.ToString("N2")
+    End Sub
+
+    Private Sub addExpenseButton_Click(sender As Object, e As EventArgs) Handles addExpenseButton.Click
+        AddExpenseForm.Show()
+        expenseAddedSuccess.Hide()
+    End Sub
 
     'xxxxxxxxxxxxxxxxxxxxxxx______HOMEPAGE CODE ENDS______xxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -277,7 +333,6 @@
         offerComboBox.Items.Clear()
         personComboBox.Items.Clear()
         taskComboBox.Items.Clear()
-
 
         For Each task As Task In yourTasksArray
             offerComboBox.Items.Add(task.TaskName)
