@@ -22,11 +22,22 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         Expense = New TabPage()
         Chore = New TabPage()
-        ChoreHistory = New ChoreHistory()
+        CheckBox13 = New CheckBox()
+        CheckBox12 = New CheckBox()
+        CheckBox11 = New CheckBox()
+        CheckBox10 = New CheckBox()
+        CheckBox9 = New CheckBox()
+        CheckBox8 = New CheckBox()
+        CheckBox7 = New CheckBox()
+        CheckBox6 = New CheckBox()
+        CheckBox5 = New CheckBox()
+        CheckBox4 = New CheckBox()
+        CheckBox3 = New CheckBox()
+        CheckBox2 = New CheckBox()
+        CheckBox1 = New CheckBox()
         addTaskChoreBtn = New Button()
         ChoreTitle = New Label()
         ChoreListScroll = New VScrollBar()
@@ -94,7 +105,19 @@ Partial Class Form1
         ' 
         ' Chore
         ' 
-        Chore.Controls.Add(ChoreHistory)
+        Chore.Controls.Add(CheckBox13)
+        Chore.Controls.Add(CheckBox12)
+        Chore.Controls.Add(CheckBox11)
+        Chore.Controls.Add(CheckBox10)
+        Chore.Controls.Add(CheckBox9)
+        Chore.Controls.Add(CheckBox8)
+        Chore.Controls.Add(CheckBox7)
+        Chore.Controls.Add(CheckBox6)
+        Chore.Controls.Add(CheckBox5)
+        Chore.Controls.Add(CheckBox4)
+        Chore.Controls.Add(CheckBox3)
+        Chore.Controls.Add(CheckBox2)
+        Chore.Controls.Add(CheckBox1)
         Chore.Controls.Add(addTaskChoreBtn)
         Chore.Controls.Add(ChoreTitle)
         Chore.Controls.Add(ChoreListScroll)
@@ -107,13 +130,148 @@ Partial Class Form1
         Chore.Text = "Chore"
         Chore.UseVisualStyleBackColor = True
         ' 
-        ' ChoreHistory
+        ' CheckBox13
         ' 
-        ChoreHistory.Location = New Point(0, 0)
-        ChoreHistory.Name = "ChoreHistory"
-        ChoreHistory.Size = New Size(447, 519)
-        ChoreHistory.TabIndex = 1
-        ChoreHistory.Visible = False
+        CheckBox13.AutoSize = True
+        CheckBox13.Checked = True
+        CheckBox13.CheckState = CheckState.Indeterminate
+        CheckBox13.Location = New Point(17, 321)
+        CheckBox13.Name = "CheckBox13"
+        CheckBox13.Size = New Size(15, 14)
+        CheckBox13.TabIndex = 21
+        CheckBox13.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox12
+        ' 
+        CheckBox12.AutoSize = True
+        CheckBox12.Checked = True
+        CheckBox12.CheckState = CheckState.Indeterminate
+        CheckBox12.Location = New Point(17, 304)
+        CheckBox12.Name = "CheckBox12"
+        CheckBox12.Size = New Size(15, 14)
+        CheckBox12.TabIndex = 20
+        CheckBox12.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox11
+        ' 
+        CheckBox11.AutoSize = True
+        CheckBox11.Checked = True
+        CheckBox11.CheckState = CheckState.Indeterminate
+        CheckBox11.Location = New Point(17, 285)
+        CheckBox11.Name = "CheckBox11"
+        CheckBox11.Size = New Size(15, 14)
+        CheckBox11.TabIndex = 19
+        CheckBox11.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox10
+        ' 
+        CheckBox10.AutoSize = True
+        CheckBox10.Checked = True
+        CheckBox10.CheckState = CheckState.Indeterminate
+        CheckBox10.Location = New Point(16, 265)
+        CheckBox10.Name = "CheckBox10"
+        CheckBox10.Size = New Size(15, 14)
+        CheckBox10.TabIndex = 18
+        CheckBox10.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox9
+        ' 
+        CheckBox9.AutoSize = True
+        CheckBox9.Checked = True
+        CheckBox9.CheckState = CheckState.Indeterminate
+        CheckBox9.Location = New Point(16, 246)
+        CheckBox9.Name = "CheckBox9"
+        CheckBox9.Size = New Size(15, 14)
+        CheckBox9.TabIndex = 17
+        CheckBox9.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox8
+        ' 
+        CheckBox8.AutoSize = True
+        CheckBox8.Checked = True
+        CheckBox8.CheckState = CheckState.Indeterminate
+        CheckBox8.Location = New Point(16, 228)
+        CheckBox8.Name = "CheckBox8"
+        CheckBox8.Size = New Size(15, 14)
+        CheckBox8.TabIndex = 16
+        CheckBox8.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox7
+        ' 
+        CheckBox7.AutoSize = True
+        CheckBox7.Checked = True
+        CheckBox7.CheckState = CheckState.Indeterminate
+        CheckBox7.Location = New Point(16, 209)
+        CheckBox7.Name = "CheckBox7"
+        CheckBox7.Size = New Size(15, 14)
+        CheckBox7.TabIndex = 15
+        CheckBox7.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox6
+        ' 
+        CheckBox6.AutoSize = True
+        CheckBox6.Checked = True
+        CheckBox6.CheckState = CheckState.Indeterminate
+        CheckBox6.Location = New Point(16, 189)
+        CheckBox6.Name = "CheckBox6"
+        CheckBox6.Size = New Size(15, 14)
+        CheckBox6.TabIndex = 14
+        CheckBox6.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox5
+        ' 
+        CheckBox5.AutoSize = True
+        CheckBox5.Checked = True
+        CheckBox5.CheckState = CheckState.Indeterminate
+        CheckBox5.Location = New Point(16, 169)
+        CheckBox5.Name = "CheckBox5"
+        CheckBox5.Size = New Size(15, 14)
+        CheckBox5.TabIndex = 13
+        CheckBox5.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox4
+        ' 
+        CheckBox4.AutoSize = True
+        CheckBox4.Checked = True
+        CheckBox4.CheckState = CheckState.Indeterminate
+        CheckBox4.Location = New Point(16, 152)
+        CheckBox4.Name = "CheckBox4"
+        CheckBox4.Size = New Size(15, 14)
+        CheckBox4.TabIndex = 12
+        CheckBox4.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox3
+        ' 
+        CheckBox3.AutoSize = True
+        CheckBox3.Checked = True
+        CheckBox3.CheckState = CheckState.Indeterminate
+        CheckBox3.Location = New Point(16, 132)
+        CheckBox3.Name = "CheckBox3"
+        CheckBox3.Size = New Size(15, 14)
+        CheckBox3.TabIndex = 11
+        CheckBox3.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox2
+        ' 
+        CheckBox2.AutoSize = True
+        CheckBox2.Checked = True
+        CheckBox2.CheckState = CheckState.Indeterminate
+        CheckBox2.Location = New Point(16, 112)
+        CheckBox2.Name = "CheckBox2"
+        CheckBox2.Size = New Size(15, 14)
+        CheckBox2.TabIndex = 10
+        CheckBox2.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox1
+        ' 
+        CheckBox1.AutoSize = True
+        CheckBox1.Checked = True
+        CheckBox1.CheckState = CheckState.Indeterminate
+        CheckBox1.Location = New Point(17, 93)
+        CheckBox1.Name = "CheckBox1"
+        CheckBox1.Size = New Size(15, 14)
+        CheckBox1.TabIndex = 9
+        CheckBox1.UseVisualStyleBackColor = True
         ' 
         ' addTaskChoreBtn
         ' 
@@ -148,9 +306,9 @@ Partial Class Form1
         ChoreListView.BorderStyle = BorderStyle.FixedSingle
         ChoreListView.Columns.AddRange(New ColumnHeader() {ColumnHeader6, ColumnHeader7, ColumnHeader8, ColumnHeader9, ColumnHeader10})
         ChoreListView.GridLines = True
-        ChoreListView.Location = New Point(13, 67)
+        ChoreListView.Location = New Point(38, 67)
         ChoreListView.Name = "ChoreListView"
-        ChoreListView.Size = New Size(396, 309)
+        ChoreListView.Size = New Size(371, 309)
         ChoreListView.TabIndex = 5
         ChoreListView.UseCompatibleStateImageBehavior = False
         ChoreListView.View = View.Details
@@ -173,7 +331,6 @@ Partial Class Form1
         ' ColumnHeader9
         ' 
         ColumnHeader9.Text = "Frequency"
-        ColumnHeader9.Width = 80
         ' 
         ' ColumnHeader10
         ' 
@@ -290,7 +447,7 @@ Partial Class Form1
         ' roomateTaskslbl
         ' 
         roomateTaskslbl.AutoSize = True
-        roomateTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        roomateTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         roomateTaskslbl.Location = New Point(16, 243)
         roomateTaskslbl.Name = "roomateTaskslbl"
         roomateTaskslbl.Size = New Size(205, 28)
@@ -300,7 +457,7 @@ Partial Class Form1
         ' yourTaskslbl
         ' 
         yourTaskslbl.AutoSize = True
-        yourTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         yourTaskslbl.Location = New Point(16, 39)
         yourTaskslbl.Name = "yourTaskslbl"
         yourTaskslbl.Size = New Size(125, 28)
@@ -385,7 +542,7 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(464, 601)
         Controls.Add(TabControl1)
@@ -430,9 +587,7 @@ Partial Class Form1
     Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader9 As ColumnHeader
     Friend WithEvents ColumnHeader10 As ColumnHeader
-    Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents mateTradeLabel As Label
     Friend WithEvents taskComboBox As ComboBox
     Friend WithEvents selfTradeLabel As Label
@@ -442,5 +597,17 @@ Partial Class Form1
     Friend WithEvents personComboBox As ComboBox
     Friend WithEvents ChoreCompletionHistoryBtn As Button
     Friend WithEvents ChoreHistory As ChoreHistory
-
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox12 As CheckBox
+    Friend WithEvents CheckBox11 As CheckBox
+    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox13 As CheckBox
 End Class
