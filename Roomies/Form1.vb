@@ -1,6 +1,4 @@
 ﻿Public Class Form1
-
-    Private CheckBoxArray() As CheckBox ' Declare an array to hold CheckBoxes
     Private completedChores As New List(Of CompletedChores)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -247,63 +245,6 @@
 
 
     'xxxxxxxxxxxxxxxxxxxxxxx______HOMEPAGE CODE ENDS______xxxxxxxxxxxxxxxxxxxxxxxxxx
-
-    'Checkbox click on the chores screen
-    Private Sub CheckBox_CheckedChanged(sender As Object, e As EventArgs)
-        Dim clickedCheckBox As CheckBox = DirectCast(sender, CheckBox)
-        Dim checkBoxNumber As Integer = Array.IndexOf(CheckBoxArray, clickedCheckBox)
-
-        If checkBoxNumber >= 0 AndAlso checkBoxNumber < CheckBoxArray.Length Then
-            RemoveTaskByCheckBoxNumber(checkBoxNumber)
-
-            ' To update the listview
-            ChoreListView.Items.Clear()
-            PopulateListViewTasks(ChoreListView, yourTasksArray)
-            PopulateListViewTasks(ChoreListView, roommatesTasksArray)
-
-        End If
-    End Sub
-
-    Private Sub RemoveTaskByCheckBoxNumber(checkBoxNumber As Integer)
-        If checkBoxNumber >= 0 AndAlso checkBoxNumber < CheckBoxArray.Length Then
-
-            If yourTasksArray.Count > 0 AndAlso checkBoxNumber < yourTasksArray.Count Then
-                ' Remove the task from yourTasksArray
-                Dim taskName As String = yourTasksArray.ElementAt(checkBoxNumber).TaskName
-                Dim taskDescription As String = yourTasksArray.ElementAt(checkBoxNumber).Description
-                Dim taskDate As DateTime = yourTasksArray.ElementAt(checkBoxNumber).DueDate
-                Dim taskFrequency As String = yourTasksArray.ElementAt(checkBoxNumber).Frequency
-                Dim taskException As String = yourTasksArray.ElementAt(checkBoxNumber).Exceptions
-                Dim taskAssignedTo As String = yourTasksArray.ElementAt(checkBoxNumber).AssignedTo
-                Dim todayDate As DateTime = DateTime.Now()
-
-                Dim currentCompletedChore As New CompletedChores(taskName, taskDescription, taskDate, taskFrequency, taskException, taskAssignedTo, todayDate)
-                completedChores.Add(currentCompletedChore)
-
-                yourTasksArray.RemoveAt(checkBoxNumber)
-                Exit Sub
-            ElseIf roommatesTasksArray.Count > 0 AndAlso checkBoxNumber >= yourTasksArray.Count AndAlso checkBoxNumber < yourTasksArray.Count + roommatesTasksArray.Count Then
-                ' Remove the task from roommatesTasksArray
-                Dim taskName As String = roommatesTasksArray.ElementAt(checkBoxNumber).TaskName
-                Dim taskDescription As String = roommatesTasksArray.ElementAt(checkBoxNumber).Description
-                Dim taskDate As DateTime = roommatesTasksArray.ElementAt(checkBoxNumber).DueDate
-                Dim taskFrequency As String = roommatesTasksArray.ElementAt(checkBoxNumber).Frequency
-                Dim taskException As String = roommatesTasksArray.ElementAt(checkBoxNumber).Exceptions
-                Dim taskAssignedTo As String = roommatesTasksArray.ElementAt(checkBoxNumber).AssignedTo
-                Dim todayDate As DateTime = DateTime.Now()
-
-                Dim currentCompletedChore As New CompletedChores(taskName, taskDescription, taskDate, taskFrequency, taskException, taskAssignedTo, todayDate)
-                completedChores.Add(currentCompletedChore)
-
-                Dim roommatesIndex As Integer = checkBoxNumber - yourTasksArray.Count
-                roommatesTasksArray.RemoveAt(roommatesIndex)
-                Exit Sub
-            End If
-
-            ' Update the CheckBoxArray, assuming CheckBoxArray is an array of CheckBoxes
-            Array.Resize(CheckBoxArray, CheckBoxArray.Length - 1)
-        End If
-    End Sub
 
     Private Sub ChoreCompletionHistoryBtn_Click(sender As Object, e As EventArgs) Handles ChoreCompletionHistoryBtn.Click
 
