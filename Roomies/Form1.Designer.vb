@@ -22,11 +22,9 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ListViewItem1 As ListViewItem = New ListViewItem(New String() {"Party Cups", "$10.00"}, -1)
         TabControl1 = New TabControl()
         Expense = New TabPage()
-        AddExpense1 = New AddExpense()
-        BalanceSheet1 = New BalanceSheet()
+        expenseAddedSuccess = New Label()
         addExpenseButton = New Button()
         ViewBalanceSheet = New Button()
         yourTotalAmount = New Label()
@@ -35,6 +33,8 @@ Partial Class Form1
         yourExpenseItemColumn = New ColumnHeader()
         yourExpenseCostColumn = New ColumnHeader()
         yourExpenseLabel = New Label()
+        AddExpenseForm = New AddExpense()
+        BalanceSheet1 = New BalanceSheet()
         Chore = New TabPage()
         Home = New TabPage()
         addTaskHomeScreenBtn = New Button()
@@ -78,8 +78,9 @@ Partial Class Form1
         ' 
         ' Expense
         ' 
-        Expense.Controls.Add(AddExpense1)
+        Expense.Controls.Add(AddExpenseForm)
         Expense.Controls.Add(BalanceSheet1)
+        Expense.Controls.Add(expenseAddedSuccess)
         Expense.Controls.Add(addExpenseButton)
         Expense.Controls.Add(ViewBalanceSheet)
         Expense.Controls.Add(yourTotalAmount)
@@ -95,26 +96,22 @@ Partial Class Form1
         Expense.Text = "Expense"
         Expense.UseVisualStyleBackColor = True
         ' 
-        ' AddExpense1
+        ' expenseAddedSuccess
         ' 
-        AddExpense1.Location = New Point(-18, -29)
-        AddExpense1.Margin = New Padding(5, 6, 5, 6)
-        AddExpense1.Name = "AddExpense1"
-        AddExpense1.Size = New Size(794, 1816)
-        AddExpense1.TabIndex = 11
-        AddExpense1.Visible = False
-        ' 
-        ' BalanceSheet1
-        ' 
-        BalanceSheet1.Location = New Point(0, 0)
-        BalanceSheet1.Margin = New Padding(9, 12, 9, 12)
-        BalanceSheet1.Name = "BalanceSheet1"
-        BalanceSheet1.Size = New Size(766, 1038)
-        BalanceSheet1.TabIndex = 9
-        BalanceSheet1.Visible = False
+        expenseAddedSuccess.AutoSize = True
+        expenseAddedSuccess.Font = New Font("Gadugi", 9.857143F, FontStyle.Regular, GraphicsUnit.Point)
+        expenseAddedSuccess.ForeColor = Color.Green
+        expenseAddedSuccess.Location = New Point(17, 806)
+        expenseAddedSuccess.Margin = New Padding(5, 0, 5, 0)
+        expenseAddedSuccess.Name = "expenseAddedSuccess"
+        expenseAddedSuccess.Size = New Size(432, 28)
+        expenseAddedSuccess.TabIndex = 21
+        expenseAddedSuccess.Text = "A new expense was successfully added!"
+        expenseAddedSuccess.Visible = False
         ' 
         ' addExpenseButton
         ' 
+        addExpenseButton.Font = New Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point)
         addExpenseButton.Location = New Point(525, 746)
         addExpenseButton.Margin = New Padding(5, 6, 5, 6)
         addExpenseButton.Name = "addExpenseButton"
@@ -125,10 +122,11 @@ Partial Class Form1
         ' 
         ' ViewBalanceSheet
         ' 
-        ViewBalanceSheet.Location = New Point(17, 908)
+        ViewBalanceSheet.Font = New Font("Gadugi", 15.8571434F, FontStyle.Bold, GraphicsUnit.Point)
+        ViewBalanceSheet.Location = New Point(17, 840)
         ViewBalanceSheet.Margin = New Padding(5, 6, 5, 6)
         ViewBalanceSheet.Name = "ViewBalanceSheet"
-        ViewBalanceSheet.Size = New Size(216, 94)
+        ViewBalanceSheet.Size = New Size(724, 94)
         ViewBalanceSheet.TabIndex = 8
         ViewBalanceSheet.Text = "Household Balance Sheet"
         ViewBalanceSheet.UseVisualStyleBackColor = True
@@ -161,7 +159,6 @@ Partial Class Form1
         yourExpenseList.Alignment = ListViewAlignment.Default
         yourExpenseList.Columns.AddRange(New ColumnHeader() {yourExpenseItemColumn, yourExpenseCostColumn})
         yourExpenseList.GridLines = True
-        yourExpenseList.Items.AddRange(New ListViewItem() {ListViewItem1})
         yourExpenseList.LabelEdit = True
         yourExpenseList.Location = New Point(17, 134)
         yourExpenseList.Margin = New Padding(5, 6, 5, 6)
@@ -178,7 +175,7 @@ Partial Class Form1
         ' 
         ' yourExpenseCostColumn
         ' 
-        yourExpenseCostColumn.Text = "Cost"
+        yourExpenseCostColumn.Text = "Cost ($)"
         yourExpenseCostColumn.Width = 120
         ' 
         ' yourExpenseLabel
@@ -191,6 +188,24 @@ Partial Class Form1
         yourExpenseLabel.Size = New Size(290, 51)
         yourExpenseLabel.TabIndex = 4
         yourExpenseLabel.Text = "Your Expenses"
+        ' 
+        ' AddExpenseForm
+        ' 
+        AddExpenseForm.Location = New Point(-18, -29)
+        AddExpenseForm.Margin = New Padding(5, 6, 5, 6)
+        AddExpenseForm.Name = "AddExpenseForm"
+        AddExpenseForm.Size = New Size(794, 1816)
+        AddExpenseForm.TabIndex = 11
+        AddExpenseForm.Visible = False
+        ' 
+        ' BalanceSheet1
+        ' 
+        BalanceSheet1.Location = New Point(0, 0)
+        BalanceSheet1.Margin = New Padding(9, 12, 9, 12)
+        BalanceSheet1.Name = "BalanceSheet1"
+        BalanceSheet1.Size = New Size(766, 1038)
+        BalanceSheet1.TabIndex = 9
+        BalanceSheet1.Visible = False
         ' 
         ' Chore
         ' 
@@ -393,5 +408,6 @@ Partial Class Form1
     Friend WithEvents ViewBalanceSheet As Button
     Friend WithEvents BalanceSheet1 As BalanceSheet
     Friend WithEvents addExpenseButton As Button
-    Friend WithEvents AddExpense1 As AddExpense
+    Friend WithEvents AddExpenseForm As AddExpense
+    Friend WithEvents expenseAddedSuccess As Label
 End Class

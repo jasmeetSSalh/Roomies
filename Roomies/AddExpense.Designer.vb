@@ -104,9 +104,9 @@ Partial Class AddExpense
         expenseAmountBox.Margin = New Padding(3, 3, 3, 10)
         expenseAmountBox.MaxLength = 14
         expenseAmountBox.Name = "expenseAmountBox"
+        expenseAmountBox.PlaceholderText = "$0.00"
         expenseAmountBox.Size = New Size(398, 63)
         expenseAmountBox.TabIndex = 10
-        expenseAmountBox.Text = "$0.00"
         ' 
         ' expenseNotesBox
         ' 
