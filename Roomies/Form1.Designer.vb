@@ -236,7 +236,7 @@ Partial Class Form1
         ChoreHistory.Location = New Point(0, 0)
         ChoreHistory.Name = "ChoreHistory"
         ChoreHistory.Size = New Size(447, 519)
-        ChoreHistory.TabIndex = 1
+        ChoreHistory.TabIndex = 22
         ChoreHistory.Visible = False
         ' 
         ' addTaskChoreBtn
@@ -270,11 +270,12 @@ Partial Class Form1
         ChoreListView.Activation = ItemActivation.OneClick
         ChoreListView.Alignment = ListViewAlignment.Default
         ChoreListView.BorderStyle = BorderStyle.FixedSingle
+        ChoreListView.CheckBoxes = True
         ChoreListView.Columns.AddRange(New ColumnHeader() {ColumnHeader6, ColumnHeader7, ColumnHeader8, ColumnHeader9, ColumnHeader10})
         ChoreListView.GridLines = True
-        ChoreListView.Location = New Point(13, 67)
+        ChoreListView.Location = New Point(38, 67)
         ChoreListView.Name = "ChoreListView"
-        ChoreListView.Size = New Size(396, 309)
+        ChoreListView.Size = New Size(371, 309)
         ChoreListView.TabIndex = 5
         ChoreListView.UseCompatibleStateImageBehavior = False
         ChoreListView.View = View.Details
@@ -297,12 +298,11 @@ Partial Class Form1
         ' ColumnHeader9
         ' 
         ColumnHeader9.Text = "Frequency"
-        ColumnHeader9.Width = 80
         ' 
         ' ColumnHeader10
         ' 
         ColumnHeader10.Text = "Assigned To"
-        ColumnHeader10.Width = 80
+        ColumnHeader10.Width = 70
         ' 
         ' ChoreCompletionHistoryBtn
         ' 
@@ -414,7 +414,7 @@ Partial Class Form1
         ' roomateTaskslbl
         ' 
         roomateTaskslbl.AutoSize = True
-        roomateTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        roomateTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         roomateTaskslbl.Location = New Point(16, 243)
         roomateTaskslbl.Name = "roomateTaskslbl"
         roomateTaskslbl.Size = New Size(205, 28)
@@ -424,7 +424,7 @@ Partial Class Form1
         ' yourTaskslbl
         ' 
         yourTaskslbl.AutoSize = True
-        yourTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         yourTaskslbl.Location = New Point(16, 39)
         yourTaskslbl.Name = "yourTaskslbl"
         yourTaskslbl.Size = New Size(125, 28)
@@ -509,7 +509,7 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(464, 601)
         Controls.Add(TabControl1)
@@ -567,9 +567,7 @@ Partial Class Form1
     Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents ColumnHeader9 As ColumnHeader
     Friend WithEvents ColumnHeader10 As ColumnHeader
-    Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents mateTradeLabel As Label
     Friend WithEvents taskComboBox As ComboBox
     Friend WithEvents selfTradeLabel As Label
@@ -579,5 +577,4 @@ Partial Class Form1
     Friend WithEvents personComboBox As ComboBox
     Friend WithEvents ChoreCompletionHistoryBtn As Button
     Friend WithEvents ChoreHistory As ChoreHistory
-
 End Class

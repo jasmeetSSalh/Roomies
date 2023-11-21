@@ -1,8 +1,5 @@
-Imports System.ComponentModel
-Imports System.Numerics
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
-
 Public Class Form1
+    Private completedChores As New List(Of CompletedChores)
     Public expenses As New BindingList(Of Expense)()
   
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -25,8 +22,14 @@ Public Class Form1
 
         PopulateListViewTasks(ChoreListView, yourTasksArray)
         PopulateListViewTasks(ChoreListView, roommatesTasksArray)
+
         '''''''''''''''''''''''''''''''''''''''''''''' REMOVE THE CODE AFTER WE ARE DONE TESTING
-        '''
+        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "P1", DateTime.Now.AddDays(-1))
+        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "P2", DateTime.Now.AddDays(-2))
+
+        completedChores.Add(completedChore1)
+        completedChores.Add(completedChore2)
+
         expenses.Add(New Expense With {.Name = "Groceries", .Amount = 100D, .DateAdded = DateTime.Now, .Participants = New List(Of String)({"Andrew", "Nahid"})})
         expenses.Add(New Expense With {.Name = "Electricity Bill", .Amount = 60D, .DateAdded = DateTime.Now.AddDays(-10), .Participants = New List(Of String)({"Andrew", "Nahid"})})
 
@@ -298,16 +301,19 @@ Public Class Form1
     End Sub
 
     'xxxxxxxxxxxxxxxxxxxxxxx______HOMEPAGE CODE ENDS______xxxxxxxxxxxxxxxxxxxxxxxxxx
+
     Private Sub ChoreCompletionHistoryBtn_Click(sender As Object, e As EventArgs) Handles ChoreCompletionHistoryBtn.Click
-        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "P1", DateTime.Now.AddDays(-1))
-        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "P2", DateTime.Now.AddDays(-2))
 
-        Dim completedChores As New List(Of CompletedChores) From {
-            completedChore1,
-            completedChore2
-        }
+        For Each Value In completedChores
 
-        ChoreHistory.CompletedChores = completedChores
+            Dim item As New ListViewItem(Value.TaskName)
+
+            item.SubItems.Add(Value.AssignedTo)
+            item.SubItems.Add(Value.CompletedOn.Value.ToString())
+
+            ChoreHistory.HistoryList.Items.Add(item)
+        Next
+
         ChoreHistory.Show()
     End Sub
 
@@ -401,5 +407,30 @@ Public Class Form1
 
         PopulateYourHomeScreenListView(yourTasksArray)
         PopulateRoomateHomeScreenListView(roommatesTasksArray)
+    End Sub
+
+    Private Sub ChoreListView_ItemChecked(sender As Object, e As ItemCheckedEventArgs) Handles ChoreListView.ItemChecked
+        Dim checkedItem As ListViewItem = e.Item
+
+        If checkedItem IsNot Nothing AndAlso checkedItem.Checked Then
+
+            Dim taskName As String = checkedItem.Text
+            Dim description As String = checkedItem.SubItems(1).Text
+            Dim dueDate As String = checkedItem.SubItems(2).Text
+            Dim interval As String = checkedItem.SubItems(3).Text
+            Dim assignee As String = checkedItem.SubItems(4).Text
+            Dim completedChore As New CompletedChores(taskName, description, dueDate, interval, "", assignee, DateTime.Now)
+            completedChores.Add(completedChore)
+            MessageBox.Show("You have completed the Task: " & taskName & vbCrLf & "It will now be removed")
+
+            BeginInvoke(New MethodInvoker(Sub() RemoveCheckedItem(checkedItem)))
+        End If
+    End Sub
+
+    Private Sub RemoveCheckedItem(item As ListViewItem)
+        ' Perform the removal of the item
+        If ChoreListView.Items.Contains(item) Then
+            ChoreListView.Items.Remove(item)
+        End If
     End Sub
 End Class
