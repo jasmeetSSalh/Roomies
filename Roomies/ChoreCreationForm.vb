@@ -13,16 +13,6 @@ Public Class ChoreCreationForm
         _mainForm = mainForm
     End Sub
 
-    Private Sub AddToPoolRadiobtnFunction(sender As Object, e As EventArgs) Handles addToPoolRadiobtn.Click
-        voluteerRadiobtn.Checked = False
-
-    End Sub
-
-    Private Sub VoluteerRadiobtnFunction(sender As Object, e As EventArgs) Handles voluteerRadiobtn.Click
-        addToPoolRadiobtn.Checked = False
-    End Sub
-
-
     ' Property to get the created task
     Public Property CreatedTask As Task
         Get
@@ -40,7 +30,7 @@ Public Class ChoreCreationForm
         Dim dueDate As DateTime = DateTimePicker1.Value
         Dim frequency As String = frequencyComboBox.SelectedItem
         Dim exceptions As String = ComboBox1.Text
-        Dim assignedTo As String = If(addToPoolRadiobtn.Checked, "Pool", If(voluteerRadiobtn.Checked, "Me", ""))
+        Dim assignedTo As String = If(voluteerRadiobtn.Checked, "Me", "Pool")
 
         Return New Task(taskName, description, dueDate, frequency, exceptions, assignedTo)
     End Function

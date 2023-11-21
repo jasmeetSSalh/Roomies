@@ -35,7 +35,6 @@ Partial Class ChoreCreationForm
         ComboBox1 = New ComboBox()
         cancelbtn = New Button()
         okbtn = New Button()
-        addToPoolRadiobtn = New RadioButton()
         voluteerRadiobtn = New RadioButton()
         SuspendLayout()
         ' 
@@ -53,7 +52,7 @@ Partial Class ChoreCreationForm
         ' 
         descriptionlbl.AutoSize = True
         descriptionlbl.Font = New Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        descriptionlbl.Location = New Point(32, 124)
+        descriptionlbl.Location = New Point(32, 94)
         descriptionlbl.Name = "descriptionlbl"
         descriptionlbl.Size = New Size(88, 19)
         descriptionlbl.TabIndex = 1
@@ -100,7 +99,7 @@ Partial Class ChoreCreationForm
         ' descriptionTextbox
         ' 
         descriptionTextbox.Font = New Font("Gadugi", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        descriptionTextbox.Location = New Point(157, 118)
+        descriptionTextbox.Location = New Point(157, 94)
         descriptionTextbox.Multiline = True
         descriptionTextbox.Name = "descriptionTextbox"
         descriptionTextbox.Size = New Size(261, 79)
@@ -138,7 +137,7 @@ Partial Class ChoreCreationForm
         ' 
         ComboBox1.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"Roomate 1", "Roomate 2"})
+        ComboBox1.Items.AddRange(New Object() {"Andrew", "Nahid"})
         ComboBox1.Location = New Point(68, 349)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(334, 45)
@@ -164,23 +163,11 @@ Partial Class ChoreCreationForm
         okbtn.Text = "OK"
         okbtn.UseVisualStyleBackColor = True
         ' 
-        ' addToPoolRadiobtn
-        ' 
-        addToPoolRadiobtn.AutoSize = True
-        addToPoolRadiobtn.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        addToPoolRadiobtn.Location = New Point(90, 465)
-        addToPoolRadiobtn.Name = "addToPoolRadiobtn"
-        addToPoolRadiobtn.Size = New Size(109, 25)
-        addToPoolRadiobtn.TabIndex = 13
-        addToPoolRadiobtn.TabStop = True
-        addToPoolRadiobtn.Text = "Add To Pool"
-        addToPoolRadiobtn.UseVisualStyleBackColor = True
-        ' 
         ' voluteerRadiobtn
         ' 
         voluteerRadiobtn.AutoSize = True
         voluteerRadiobtn.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        voluteerRadiobtn.Location = New Point(233, 465)
+        voluteerRadiobtn.Location = New Point(68, 466)
         voluteerRadiobtn.Name = "voluteerRadiobtn"
         voluteerRadiobtn.Size = New Size(155, 25)
         voluteerRadiobtn.TabIndex = 14
@@ -194,7 +181,6 @@ Partial Class ChoreCreationForm
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(464, 601)
         Controls.Add(voluteerRadiobtn)
-        Controls.Add(addToPoolRadiobtn)
         Controls.Add(okbtn)
         Controls.Add(cancelbtn)
         Controls.Add(ComboBox1)
@@ -227,6 +213,5 @@ Partial Class ChoreCreationForm
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents cancelbtn As Button
     Friend WithEvents okbtn As Button
-    Friend WithEvents addToPoolRadiobtn As RadioButton
     Friend WithEvents voluteerRadiobtn As RadioButton
 End Class
