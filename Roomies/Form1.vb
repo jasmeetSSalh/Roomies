@@ -433,4 +433,9 @@ Public Class Form1
             ChoreListView.Items.Remove(item)
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles HouseholdBtn.Click
+        Dim myHouseholdForm As New HouseholdForm()
+        myHouseholdForm.Show()
+    End Sub
 End Class

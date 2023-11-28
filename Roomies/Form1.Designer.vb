@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         Expense = New TabPage()
         AddExpenseForm = New AddExpense()
@@ -49,6 +49,7 @@ Partial Class Form1
         ColumnHeader10 = New ColumnHeader()
         ChoreCompletionHistoryBtn = New Button()
         Home = New TabPage()
+        HouseholdBtn = New Button()
         addTaskHomeScreenBtn = New Button()
         roomatesTasksHomeScreenListView = New ListView()
         ColumnHeader1 = New ColumnHeader()
@@ -144,7 +145,7 @@ Partial Class Form1
         ' 
         ' addExpenseButton
         ' 
-        addExpenseButton.Font = New Font("Gadugi", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        addExpenseButton.Font = New Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point)
         addExpenseButton.Location = New Point(306, 373)
         addExpenseButton.Name = "addExpenseButton"
         addExpenseButton.Size = New Size(126, 26)
@@ -165,7 +166,7 @@ Partial Class Form1
         ' yourTotalAmount
         ' 
         yourTotalAmount.AutoSize = True
-        yourTotalAmount.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTotalAmount.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         yourTotalAmount.Location = New Point(140, 373)
         yourTotalAmount.Name = "yourTotalAmount"
         yourTotalAmount.Size = New Size(69, 28)
@@ -175,7 +176,7 @@ Partial Class Form1
         ' yourTotalLabel
         ' 
         yourTotalLabel.AutoSize = True
-        yourTotalLabel.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTotalLabel.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         yourTotalLabel.Location = New Point(10, 373)
         yourTotalLabel.Name = "yourTotalLabel"
         yourTotalLabel.Size = New Size(126, 28)
@@ -209,7 +210,7 @@ Partial Class Form1
         ' yourExpenseLabel
         ' 
         yourExpenseLabel.AutoSize = True
-        yourExpenseLabel.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
+        yourExpenseLabel.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
         yourExpenseLabel.Location = New Point(10, 29)
         yourExpenseLabel.Name = "yourExpenseLabel"
         yourExpenseLabel.Size = New Size(165, 28)
@@ -315,6 +316,7 @@ Partial Class Form1
         ' 
         ' Home
         ' 
+        Home.Controls.Add(HouseholdBtn)
         Home.Controls.Add(addTaskHomeScreenBtn)
         Home.Controls.Add(roomatesTasksHomeScreenListView)
         Home.Controls.Add(yourTasksHomeScreenListView)
@@ -327,6 +329,15 @@ Partial Class Form1
         Home.TabIndex = 1
         Home.Text = "Home"
         Home.UseVisualStyleBackColor = True
+        ' 
+        ' HouseholdBtn
+        ' 
+        HouseholdBtn.Location = New Point(16, 444)
+        HouseholdBtn.Name = "HouseholdBtn"
+        HouseholdBtn.Size = New Size(86, 44)
+        HouseholdBtn.TabIndex = 6
+        HouseholdBtn.Text = "Show Household"
+        HouseholdBtn.UseVisualStyleBackColor = True
         ' 
         ' addTaskHomeScreenBtn
         ' 
@@ -577,4 +588,5 @@ Partial Class Form1
     Friend WithEvents personComboBox As ComboBox
     Friend WithEvents ChoreCompletionHistoryBtn As Button
     Friend WithEvents ChoreHistory As ChoreHistory
+    Friend WithEvents HouseholdBtn As Button
 End Class
