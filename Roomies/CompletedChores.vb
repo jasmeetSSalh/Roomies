@@ -3,8 +3,8 @@
 
     Private _completedOn As DateTime?
 
-    Public Sub New(taskName As String, description As String, dueDate As DateTime, frequency As String, exceptions As String, assignedTo As String, completedOn As DateTime?)
-        MyBase.New(taskName, description, dueDate, frequency, exceptions, assignedTo)
+    Public Sub New(taskName As String, description As String, dueDate As DateTime, frequency As String, exceptions As String, assignedTo As String, effort As Integer, completedOn As DateTime?)
+        MyBase.New(taskName, description, dueDate, frequency, exceptions, assignedTo, effort)
         Me.CompletedOn = completedOn
     End Sub
 

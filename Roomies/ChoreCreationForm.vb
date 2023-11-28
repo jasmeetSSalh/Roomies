@@ -31,8 +31,9 @@ Public Class ChoreCreationForm
         Dim frequency As String = frequencyComboBox.SelectedItem
         Dim exceptions As String = ComboBox1.Text
         Dim assignedTo As String = If(voluteerRadiobtn.Checked, "Me", "Pool")
+        Dim effort As Integer = Convert.ToInt32(effortCombobox.Text)
 
-        Return New Task(taskName, description, dueDate, frequency, exceptions, assignedTo)
+        Return New Task(taskName, description, dueDate, frequency, exceptions, assignedTo, effort)
     End Function
 
     Private Sub Okbtn_Click(sender As Object, e As EventArgs) Handles okbtn.Click
@@ -54,4 +55,7 @@ Public Class ChoreCreationForm
         Me.Close()
     End Sub
 
+    Private Sub effortCombobox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles effortCombobox.SelectedIndexChanged
+
+    End Sub
 End Class

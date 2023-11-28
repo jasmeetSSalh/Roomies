@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         Expense = New TabPage()
         AddExpenseForm = New AddExpense()
@@ -73,6 +73,9 @@ Partial Class Form1
         taskComboBox = New ComboBox()
         selfTradeLabel = New Label()
         offerComboBox = New ComboBox()
+        ColumnHeader11 = New ColumnHeader()
+        Effort = New ColumnHeader()
+        ColumnHeader12 = New ColumnHeader()
         TabControl1.SuspendLayout()
         Expense.SuspendLayout()
         Chore.SuspendLayout()
@@ -145,7 +148,7 @@ Partial Class Form1
         ' 
         ' addExpenseButton
         ' 
-        addExpenseButton.Font = New Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        addExpenseButton.Font = New Font("Gadugi", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         addExpenseButton.Location = New Point(306, 373)
         addExpenseButton.Name = "addExpenseButton"
         addExpenseButton.Size = New Size(126, 26)
@@ -166,7 +169,7 @@ Partial Class Form1
         ' yourTotalAmount
         ' 
         yourTotalAmount.AutoSize = True
-        yourTotalAmount.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTotalAmount.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
         yourTotalAmount.Location = New Point(140, 373)
         yourTotalAmount.Name = "yourTotalAmount"
         yourTotalAmount.Size = New Size(69, 28)
@@ -176,7 +179,7 @@ Partial Class Form1
         ' yourTotalLabel
         ' 
         yourTotalLabel.AutoSize = True
-        yourTotalLabel.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTotalLabel.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
         yourTotalLabel.Location = New Point(10, 373)
         yourTotalLabel.Name = "yourTotalLabel"
         yourTotalLabel.Size = New Size(126, 28)
@@ -210,7 +213,7 @@ Partial Class Form1
         ' yourExpenseLabel
         ' 
         yourExpenseLabel.AutoSize = True
-        yourExpenseLabel.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourExpenseLabel.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
         yourExpenseLabel.Location = New Point(10, 29)
         yourExpenseLabel.Name = "yourExpenseLabel"
         yourExpenseLabel.Size = New Size(165, 28)
@@ -234,7 +237,7 @@ Partial Class Form1
         ' 
         ' ChoreHistory
         ' 
-        ChoreHistory.Location = New Point(0, 0)
+        ChoreHistory.Location = New Point(0, -3)
         ChoreHistory.Name = "ChoreHistory"
         ChoreHistory.Size = New Size(447, 519)
         ChoreHistory.TabIndex = 22
@@ -272,7 +275,7 @@ Partial Class Form1
         ChoreListView.Alignment = ListViewAlignment.Default
         ChoreListView.BorderStyle = BorderStyle.FixedSingle
         ChoreListView.CheckBoxes = True
-        ChoreListView.Columns.AddRange(New ColumnHeader() {ColumnHeader6, ColumnHeader7, ColumnHeader8, ColumnHeader9, ColumnHeader10})
+        ChoreListView.Columns.AddRange(New ColumnHeader() {ColumnHeader6, ColumnHeader11, ColumnHeader7, ColumnHeader8, ColumnHeader9, ColumnHeader10})
         ChoreListView.GridLines = True
         ChoreListView.Location = New Point(38, 67)
         ChoreListView.Name = "ChoreListView"
@@ -288,20 +291,23 @@ Partial Class Form1
         ' 
         ' ColumnHeader7
         ' 
+        ColumnHeader7.DisplayIndex = 1
         ColumnHeader7.Text = "Description"
-        ColumnHeader7.Width = 100
         ' 
         ' ColumnHeader8
         ' 
+        ColumnHeader8.DisplayIndex = 2
         ColumnHeader8.Text = "Due Date"
         ColumnHeader8.Width = 75
         ' 
         ' ColumnHeader9
         ' 
+        ColumnHeader9.DisplayIndex = 3
         ColumnHeader9.Text = "Frequency"
         ' 
         ' ColumnHeader10
         ' 
+        ColumnHeader10.DisplayIndex = 4
         ColumnHeader10.Text = "Assigned To"
         ColumnHeader10.Width = 70
         ' 
@@ -352,7 +358,7 @@ Partial Class Form1
         ' 
         roomatesTasksHomeScreenListView.Activation = ItemActivation.OneClick
         roomatesTasksHomeScreenListView.Alignment = ListViewAlignment.Default
-        roomatesTasksHomeScreenListView.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader3, ColumnHeader4, ColumnHeader5})
+        roomatesTasksHomeScreenListView.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader3, ColumnHeader4, ColumnHeader5, ColumnHeader12})
         roomatesTasksHomeScreenListView.GridLines = True
         roomatesTasksHomeScreenListView.Location = New Point(6, 284)
         roomatesTasksHomeScreenListView.Name = "roomatesTasksHomeScreenListView"
@@ -368,20 +374,23 @@ Partial Class Form1
         ' 
         ' ColumnHeader2
         ' 
+        ColumnHeader2.DisplayIndex = 2
         ColumnHeader2.Text = "Description"
-        ColumnHeader2.Width = 120
         ' 
         ' ColumnHeader3
         ' 
+        ColumnHeader3.DisplayIndex = 3
         ColumnHeader3.Text = "Due Date"
         ColumnHeader3.Width = 90
         ' 
         ' ColumnHeader4
         ' 
+        ColumnHeader4.DisplayIndex = 4
         ColumnHeader4.Text = "Frequency"
         ' 
         ' ColumnHeader5
         ' 
+        ColumnHeader5.DisplayIndex = 5
         ColumnHeader5.Text = "Assigned To"
         ColumnHeader5.Width = 80
         ' 
@@ -389,7 +398,7 @@ Partial Class Form1
         ' 
         yourTasksHomeScreenListView.Activation = ItemActivation.OneClick
         yourTasksHomeScreenListView.Alignment = ListViewAlignment.Default
-        yourTasksHomeScreenListView.Columns.AddRange(New ColumnHeader() {taskName, Description, dueDate, frequency, assignedTo})
+        yourTasksHomeScreenListView.Columns.AddRange(New ColumnHeader() {taskName, Effort, Description, dueDate, frequency, assignedTo})
         yourTasksHomeScreenListView.GridLines = True
         yourTasksHomeScreenListView.Location = New Point(6, 85)
         yourTasksHomeScreenListView.Name = "yourTasksHomeScreenListView"
@@ -406,7 +415,6 @@ Partial Class Form1
         ' Description
         ' 
         Description.Text = "Description"
-        Description.Width = 120
         ' 
         ' dueDate
         ' 
@@ -425,7 +433,7 @@ Partial Class Form1
         ' roomateTaskslbl
         ' 
         roomateTaskslbl.AutoSize = True
-        roomateTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        roomateTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
         roomateTaskslbl.Location = New Point(16, 243)
         roomateTaskslbl.Name = "roomateTaskslbl"
         roomateTaskslbl.Size = New Size(205, 28)
@@ -435,7 +443,7 @@ Partial Class Form1
         ' yourTaskslbl
         ' 
         yourTaskslbl.AutoSize = True
-        yourTaskslbl.Font = New Font("Gadugi", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        yourTaskslbl.Font = New Font("Gadugi", 18.0F, FontStyle.Regular, GraphicsUnit.Point)
         yourTaskslbl.Location = New Point(16, 39)
         yourTaskslbl.Name = "yourTaskslbl"
         yourTaskslbl.Size = New Size(125, 28)
@@ -518,9 +526,24 @@ Partial Class Form1
         offerComboBox.Size = New Size(240, 23)
         offerComboBox.TabIndex = 0
         ' 
+        ' ColumnHeader11
+        ' 
+        ColumnHeader11.DisplayIndex = 5
+        ColumnHeader11.Text = "Effort"
+        ColumnHeader11.Width = 40
+        ' 
+        ' Effort
+        ' 
+        Effort.Text = "Effort"
+        ' 
+        ' ColumnHeader12
+        ' 
+        ColumnHeader12.DisplayIndex = 1
+        ColumnHeader12.Text = "Effort"
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(464, 601)
         Controls.Add(TabControl1)
@@ -589,4 +612,7 @@ Partial Class Form1
     Friend WithEvents ChoreCompletionHistoryBtn As Button
     Friend WithEvents ChoreHistory As ChoreHistory
     Friend WithEvents HouseholdBtn As Button
+    Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents ColumnHeader12 As ColumnHeader
+    Friend WithEvents Effort As ColumnHeader
 End Class

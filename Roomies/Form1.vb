@@ -7,14 +7,14 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Test data for testing the PopulateListView function
         ''''''''''''''''''''''''''''''''''''''''''''' TEST
-        Dim task1 As New Task("Garbage", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "Andrew")
-        Dim task2 As New Task("Cooking", "Description 2", DateTime.Now.AddDays(2), "None", "Nothing", "Andrew")
+        Dim task1 As New Task("Garbage", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "Andrew", 1)
+        Dim task2 As New Task("Cooking", "Description 2", DateTime.Now.AddDays(2), "None", "Nothing", "Andrew", 1)
 
         yourTasksArray.Add(task1)
         yourTasksArray.Add(task2)
 
-        Dim task3 As New Task("Mopping", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "Nahid")
-        Dim task4 As New Task("Fixing", "Description 2", DateTime.Now.AddDays(2), "None", "Nothing", "Nahid")
+        Dim task3 As New Task("Mopping", "Description 1", DateTime.Now.AddDays(1), "Daily", "Soap", "Nahid", 1)
+        Dim task4 As New Task("Fixing", "Description 2", DateTime.Now.AddDays(2), "None", "Nothing", "Nahid", 1)
 
         roommatesTasksArray.Add(task3)
         roommatesTasksArray.Add(task4)
@@ -26,8 +26,8 @@ Public Class Form1
         PopulateListViewTasks(ChoreListView, roommatesTasksArray)
 
         '''''''''''''''''''''''''''''''''''''''''''''' REMOVE THE CODE AFTER WE ARE DONE TESTING
-        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "Andrew", DateTime.Now.AddDays(-1))
-        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "Nahid", DateTime.Now.AddDays(-2))
+        Dim completedChore1 As New CompletedChores("Completed Task 1", "Completed Description 1", DateTime.Now.AddDays(-2), "Daily", "Soap", "Andrew", 1, DateTime.Now.AddDays(-1))
+        Dim completedChore2 As New CompletedChores("Completed Task 2", "Completed Description 2", DateTime.Now.AddDays(-3), "None", "Nothing", "Nahid", 1, DateTime.Now.AddDays(-2))
 
         completedChores.Add(completedChore1)
         completedChores.Add(completedChore2)
@@ -49,15 +49,17 @@ Public Class Form1
         Private _frequency As String
         Private _exceptions As String
         Private _assignedTo As String ' Added AssignedTo property
+        Private _effort As Integer ' Added Effort property
 
         ' Constructor
-        Public Sub New(taskName As String, description As String, dueDate As DateTime, frequency As String, exceptions As String, assignedTo As String)
+        Public Sub New(taskName As String, description As String, dueDate As DateTime, frequency As String, exceptions As String, assignedTo As String, effort As Integer)
             Me.TaskName = taskName
             Me.Description = description
             Me.DueDate = dueDate
             Me.Frequency = frequency
             Me.Exceptions = exceptions
             Me.AssignedTo = assignedTo
+            Me.Effort = effort
         End Sub
 
         ' TaskName property
@@ -119,7 +121,18 @@ Public Class Form1
                 _assignedTo = value
             End Set
         End Property
+
+        ' Effort property
+        Public Property Effort As Integer
+            Get
+                Return _effort
+            End Get
+            Set(value As Integer)
+                _effort = value
+            End Set
+        End Property
     End Class
+
 
 
     ' Your Tasks Array
@@ -186,6 +199,7 @@ Public Class Form1
             ' Check if the item is already in the ListView
             If Not TaskExistsInListView(yourTasksHomeScreenListView, task) Then
                 Dim item As New ListViewItem(task.TaskName)
+                item.SubItems.Add(task.Effort)
                 item.SubItems.Add(task.Description)
                 item.SubItems.Add(task.DueDate.ToString("M"))
                 item.SubItems.Add(task.Frequency.ToString())
@@ -199,6 +213,7 @@ Public Class Form1
         For Each task As Task In tasksArray
             If Not TaskExistsInListView(roomatesTasksHomeScreenListView, task) Then
                 Dim item As New ListViewItem(task.TaskName)
+                item.SubItems.Add(task.Effort)
                 item.SubItems.Add(task.Description)
                 item.SubItems.Add(task.DueDate.ToString("M"))
                 item.SubItems.Add(task.Frequency.ToString())
@@ -212,14 +227,16 @@ Public Class Form1
         For Each task As Task In items
             If Not TaskExistsInListView(listView, task) Then
                 Dim item As New ListViewItem(task.TaskName)
+                item.SubItems.Add(task.Effort)
                 item.SubItems.Add(task.Description)
                 item.SubItems.Add(task.DueDate.ToString("M"))
                 item.SubItems.Add(task.Frequency.ToString())
                 item.SubItems.Add(task.AssignedTo)
-                listView.Items.Add(item)
+                listView.Items.Add(item) ' Fixed the reference to listView
             End If
         Next
     End Sub
+
 
 
     ' Function to check if a task exists in the ListView
@@ -415,11 +432,13 @@ Public Class Form1
         If checkedItem IsNot Nothing AndAlso checkedItem.Checked Then
 
             Dim taskName As String = checkedItem.Text
-            Dim description As String = checkedItem.SubItems(1).Text
-            Dim dueDate As String = checkedItem.SubItems(2).Text
-            Dim interval As String = checkedItem.SubItems(3).Text
-            Dim assignee As String = checkedItem.SubItems(4).Text
-            Dim completedChore As New CompletedChores(taskName, description, dueDate, interval, "", assignee, DateTime.Now)
+            Dim effort As Integer = checkedItem.SubItems(1).Text
+            Dim description As String = checkedItem.SubItems(2).Text
+            Dim dueDate As String = checkedItem.SubItems(3).Text
+            Dim interval As String = checkedItem.SubItems(4).Text
+            Dim assignee As String = checkedItem.SubItems(5).Text
+
+            Dim completedChore As New CompletedChores(taskName, description, dueDate, interval, "", assignee, effort, DateTime.Now)
             completedChores.Add(completedChore)
             MessageBox.Show("You have completed the Task: " & taskName & vbCrLf & "It will now be removed")
 

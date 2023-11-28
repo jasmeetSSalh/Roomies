@@ -36,12 +36,14 @@ Partial Class ChoreCreationForm
         cancelbtn = New Button()
         okbtn = New Button()
         voluteerRadiobtn = New RadioButton()
+        effortCombobox = New ComboBox()
+        Label1 = New Label()
         SuspendLayout()
         ' 
         ' nameOfTasklbl
         ' 
         nameOfTasklbl.AutoSize = True
-        nameOfTasklbl.Font = New Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        nameOfTasklbl.Font = New Font("Gadugi", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         nameOfTasklbl.Location = New Point(32, 42)
         nameOfTasklbl.Name = "nameOfTasklbl"
         nameOfTasklbl.Size = New Size(104, 19)
@@ -51,7 +53,7 @@ Partial Class ChoreCreationForm
         ' descriptionlbl
         ' 
         descriptionlbl.AutoSize = True
-        descriptionlbl.Font = New Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        descriptionlbl.Font = New Font("Gadugi", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         descriptionlbl.Location = New Point(32, 94)
         descriptionlbl.Name = "descriptionlbl"
         descriptionlbl.Size = New Size(88, 19)
@@ -61,7 +63,7 @@ Partial Class ChoreCreationForm
         ' datelbl
         ' 
         datelbl.AutoSize = True
-        datelbl.Font = New Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        datelbl.Font = New Font("Gadugi", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         datelbl.Location = New Point(32, 213)
         datelbl.Name = "datelbl"
         datelbl.Size = New Size(41, 19)
@@ -71,7 +73,7 @@ Partial Class ChoreCreationForm
         ' exceptionslbl
         ' 
         exceptionslbl.AutoSize = True
-        exceptionslbl.Font = New Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        exceptionslbl.Font = New Font("Gadugi", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         exceptionslbl.Location = New Point(32, 312)
         exceptionslbl.Name = "exceptionslbl"
         exceptionslbl.Size = New Size(82, 19)
@@ -81,7 +83,7 @@ Partial Class ChoreCreationForm
         ' preferenceSelectionlbl
         ' 
         preferenceSelectionlbl.AutoSize = True
-        preferenceSelectionlbl.Font = New Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        preferenceSelectionlbl.Font = New Font("Gadugi", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         preferenceSelectionlbl.Location = New Point(32, 425)
         preferenceSelectionlbl.Name = "preferenceSelectionlbl"
         preferenceSelectionlbl.Size = New Size(128, 19)
@@ -90,7 +92,7 @@ Partial Class ChoreCreationForm
         ' 
         ' nameOfTaskTextbox
         ' 
-        nameOfTaskTextbox.Font = New Font("Gadugi", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        nameOfTaskTextbox.Font = New Font("Gadugi", 14.0F, FontStyle.Regular, GraphicsUnit.Point)
         nameOfTaskTextbox.Location = New Point(157, 36)
         nameOfTaskTextbox.Name = "nameOfTaskTextbox"
         nameOfTaskTextbox.Size = New Size(261, 32)
@@ -98,7 +100,7 @@ Partial Class ChoreCreationForm
         ' 
         ' descriptionTextbox
         ' 
-        descriptionTextbox.Font = New Font("Gadugi", 14F, FontStyle.Regular, GraphicsUnit.Point)
+        descriptionTextbox.Font = New Font("Gadugi", 14.0F, FontStyle.Regular, GraphicsUnit.Point)
         descriptionTextbox.Location = New Point(157, 94)
         descriptionTextbox.Multiline = True
         descriptionTextbox.Name = "descriptionTextbox"
@@ -117,7 +119,7 @@ Partial Class ChoreCreationForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label6.Font = New Font("Gadugi", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         Label6.Location = New Point(233, 213)
         Label6.Name = "Label6"
         Label6.Size = New Size(81, 19)
@@ -135,17 +137,17 @@ Partial Class ChoreCreationForm
         ' 
         ' ComboBox1
         ' 
-        ComboBox1.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
+        ComboBox1.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
         ComboBox1.FormattingEnabled = True
         ComboBox1.Items.AddRange(New Object() {"Andrew", "Nahid"})
-        ComboBox1.Location = New Point(68, 349)
+        ComboBox1.Location = New Point(32, 348)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(334, 45)
+        ComboBox1.Size = New Size(141, 45)
         ComboBox1.TabIndex = 10
         ' 
         ' cancelbtn
         ' 
-        cancelbtn.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        cancelbtn.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         cancelbtn.Location = New Point(90, 531)
         cancelbtn.Name = "cancelbtn"
         cancelbtn.Size = New Size(92, 32)
@@ -155,7 +157,7 @@ Partial Class ChoreCreationForm
         ' 
         ' okbtn
         ' 
-        okbtn.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        okbtn.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         okbtn.Location = New Point(294, 531)
         okbtn.Name = "okbtn"
         okbtn.Size = New Size(92, 32)
@@ -166,7 +168,7 @@ Partial Class ChoreCreationForm
         ' voluteerRadiobtn
         ' 
         voluteerRadiobtn.AutoSize = True
-        voluteerRadiobtn.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        voluteerRadiobtn.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
         voluteerRadiobtn.Location = New Point(68, 466)
         voluteerRadiobtn.Name = "voluteerRadiobtn"
         voluteerRadiobtn.Size = New Size(155, 25)
@@ -175,11 +177,33 @@ Partial Class ChoreCreationForm
         voluteerRadiobtn.Text = "Volunteer For Task"
         voluteerRadiobtn.UseVisualStyleBackColor = True
         ' 
+        ' effortCombobox
+        ' 
+        effortCombobox.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
+        effortCombobox.FormattingEnabled = True
+        effortCombobox.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        effortCombobox.Location = New Point(233, 348)
+        effortCombobox.Name = "effortCombobox"
+        effortCombobox.Size = New Size(141, 45)
+        effortCombobox.TabIndex = 15
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Gadugi", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Location = New Point(233, 312)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(47, 19)
+        Label1.TabIndex = 16
+        Label1.Text = "Effort"
+        ' 
         ' ChoreCreationForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(464, 601)
+        Controls.Add(Label1)
+        Controls.Add(effortCombobox)
         Controls.Add(voluteerRadiobtn)
         Controls.Add(okbtn)
         Controls.Add(cancelbtn)
@@ -214,4 +238,6 @@ Partial Class ChoreCreationForm
     Friend WithEvents cancelbtn As Button
     Friend WithEvents okbtn As Button
     Friend WithEvents voluteerRadiobtn As RadioButton
+    Friend WithEvents effortCombobox As ComboBox
+    Friend WithEvents Label1 As Label
 End Class
